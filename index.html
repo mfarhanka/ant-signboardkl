@@ -39,10 +39,17 @@
         color: var(--ink);
         font-weight: 800;
         letter-spacing: 0;
+        display: inline-flex;
+        align-items: center;
+        padding-top: 0.2rem;
+        padding-bottom: 0.2rem;
       }
 
-      .navbar-brand span {
-        color: var(--brand-red);
+      .navbar-brand img {
+        width: 58px;
+        height: 58px;
+        object-fit: contain;
+        display: block;
       }
 
       .navbar-light .navbar-nav .nav-link {
@@ -371,6 +378,11 @@
       }
 
       @media (max-width: 575.98px) {
+        .navbar-brand img {
+          width: 50px;
+          height: 50px;
+        }
+
         section {
           padding: 58px 0;
         }
@@ -396,7 +408,9 @@
   <body>
     <nav class="navbar navbar-expand-lg navbar-light sticky-top">
       <div class="container">
-        <a class="navbar-brand" href="#">Signboard<span>KL</span></a>
+        <a class="navbar-brand" href="#" aria-label="A&T Media Sdn. Bhd.">
+          <img src="assets/ant-signage-logo.png" alt="A&T Media Sdn. Bhd. logo">
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
