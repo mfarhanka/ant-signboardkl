@@ -8,80 +8,104 @@ $canonicalUrl = rtrim($siteUrl, '/') . '/products.php';
 $ogImage = rtrim($siteUrl, '/') . '/assets/signboardkl-hero.png';
 $logoImage = rtrim($siteUrl, '/') . '/assets/ant-signage-logo.png';
 
-$products = [
+$productGroups = [
   [
-    'id' => 'box-up-lettering',
-    'title' => '3D Box Up Lettering',
-    'icon' => 'fa-font',
-    'summary' => 'Dimensional lettering for storefronts, offices, and branded environments that need stronger presence and premium finishing.',
-    'details' => [
-      'Built for facade branding, reception signs, and premium commercial frontage.',
-      'Material options include acrylic, aluminium, and stainless steel combinations.',
-      'Suitable for illuminated and non-illuminated brand applications.',
+    'id' => 'core-signage',
+    'title' => 'Core Signage Systems',
+    'description' => 'Main brand visibility products for shopfronts, building fascia, directional needs, and permanent site signage.',
+    'items' => [
+      [
+        'id' => 'box-up-lettering',
+        'title' => '3D Box Up Lettering',
+        'icon' => 'fa-font',
+        'summary' => 'Dimensional lettering for storefronts, offices, and branded environments that need stronger presence and premium finishing.',
+        'details' => [
+          'Built for facade branding, reception signs, and premium commercial frontage.',
+          'Material options include acrylic, aluminium, and stainless steel combinations.',
+          'Suitable for illuminated and non-illuminated brand applications.',
+        ],
+        'tags' => ['Acrylic Lettering', 'Aluminium / Acrylic', 'Aluminium Lettering', 'Stainless Steel'],
+      ],
+      [
+        'id' => 'signboard',
+        'title' => 'Signboard',
+        'icon' => 'fa-store',
+        'summary' => 'Custom signboard solutions for shops, commercial units, construction sites, and business frontage.',
+        'details' => [
+          'Designed for strong street visibility and brand recognition.',
+          'Front-lit, back-lit, and lightbox formats available based on site requirements.',
+          'Supports fabrication, installation, and finishing coordination.',
+        ],
+        'tags' => ['3D Lighting', 'Back-Lit', 'Front-Lit', 'Lightbox', 'Aluminium Strip Base'],
+      ],
+      [
+        'id' => 'signage',
+        'title' => 'Signage',
+        'icon' => 'fa-lightbulb',
+        'summary' => 'Indoor and outdoor signage designed for clear brand visibility, direction, promotion, and display.',
+        'details' => [
+          'Suitable for wayfinding, directional systems, site boards, and branded displays.',
+          'Covers retail, office, construction, and promotional environments.',
+          'Can be produced for permanent installation or campaign-based usage.',
+        ],
+        'tags' => ['Billboard & Hoarding', 'Indoor Signage', 'LED Display', 'Pylon & Directional', 'Road Sign'],
+      ],
     ],
-    'tags' => ['Acrylic Lettering', 'Aluminium / Acrylic', 'Aluminium Lettering', 'Stainless Steel'],
   ],
   [
-    'id' => 'signboard',
-    'title' => 'Signboard',
-    'icon' => 'fa-store',
-    'summary' => 'Custom signboard solutions for shops, commercial units, construction sites, and business frontage.',
-    'details' => [
-      'Designed for strong street visibility and brand recognition.',
-      'Front-lit, back-lit, and lightbox formats available based on site requirements.',
-      'Supports fabrication, installation, and finishing coordination.',
+    'id' => 'display-print',
+    'title' => 'Display & Print Solutions',
+    'description' => 'Flexible campaign, retail, event, and illuminated display products that can expand easily as new formats are added.',
+    'items' => [
+      [
+        'id' => 'printing',
+        'title' => 'Printing',
+        'icon' => 'fa-print',
+        'summary' => 'Commercial printing support for promotional displays, banners, decals, and business graphics.',
+        'details' => [
+          'Ideal for product launches, events, business promotions, and retail campaigns.',
+          'Supports indoor and outdoor print applications with practical finishing choices.',
+          'Works alongside signboard and signage projects for one-stop brand rollout.',
+        ],
+        'tags' => ['Display Set', 'Wood Easel Stand', 'Exhibition Booth', 'Backdrop Display', 'Sticker Service'],
+      ],
+      [
+        'id' => 'fabric-lightbox',
+        'title' => 'Fabric Lightbox',
+        'icon' => 'fa-tools',
+        'summary' => 'Clean illuminated display systems for retail, exhibition, showroom, and high-visibility brand spaces.',
+        'details' => [
+          'Creates even lighting with clean graphic presentation for premium environments.',
+          'Useful for showrooms, pop-up spaces, exhibitions, and retail display walls.',
+          'Available in soft fabric and double-sided formats.',
+        ],
+        'tags' => ['Soft Fabric Lightbox', 'Double Sided', 'Retail Display'],
+      ],
+      [
+        'id' => 'standee-signage',
+        'title' => 'Standee Signage',
+        'icon' => 'fa-ruler-combined',
+        'summary' => 'Portable display signage for events, retail floors, campaigns, wayfinding, and product promotions.',
+        'details' => [
+          'Fast to deploy for campaigns, events, and temporary promotional messaging.',
+          'Well suited for indoor activations, counters, and product awareness points.',
+          'Can be paired with printed graphics and other branded display materials.',
+        ],
+        'tags' => ['Roll Up Bunting', 'Campaign Display', 'Floor Standee'],
+      ],
     ],
-    'tags' => ['3D Lighting', 'Back-Lit', 'Front-Lit', 'Lightbox', 'Aluminium Strip Base'],
-  ],
-  [
-    'id' => 'signage',
-    'title' => 'Signage',
-    'icon' => 'fa-lightbulb',
-    'summary' => 'Indoor and outdoor signage designed for clear brand visibility, direction, promotion, and display.',
-    'details' => [
-      'Suitable for wayfinding, directional systems, site boards, and branded displays.',
-      'Covers retail, office, construction, and promotional environments.',
-      'Can be produced for permanent installation or campaign-based usage.',
-    ],
-    'tags' => ['Billboard & Hoarding', 'Indoor Signage', 'LED Display', 'Pylon & Directional', 'Road Sign'],
-  ],
-  [
-    'id' => 'printing',
-    'title' => 'Printing',
-    'icon' => 'fa-print',
-    'summary' => 'Commercial printing support for promotional displays, banners, decals, and business graphics.',
-    'details' => [
-      'Ideal for product launches, events, business promotions, and retail campaigns.',
-      'Supports indoor and outdoor print applications with practical finishing choices.',
-      'Works alongside signboard and signage projects for one-stop brand rollout.',
-    ],
-    'tags' => ['Display Set', 'Wood Easel Stand', 'Exhibition Booth', 'Backdrop Display', 'Sticker Service'],
-  ],
-  [
-    'id' => 'fabric-lightbox',
-    'title' => 'Fabric Lightbox',
-    'icon' => 'fa-tools',
-    'summary' => 'Clean illuminated display systems for retail, exhibition, showroom, and high-visibility brand spaces.',
-    'details' => [
-      'Creates even lighting with clean graphic presentation for premium environments.',
-      'Useful for showrooms, pop-up spaces, exhibitions, and retail display walls.',
-      'Available in soft fabric and double-sided formats.',
-    ],
-    'tags' => ['Soft Fabric Lightbox', 'Double Sided', 'Retail Display'],
-  ],
-  [
-    'id' => 'standee-signage',
-    'title' => 'Standee Signage',
-    'icon' => 'fa-ruler-combined',
-    'summary' => 'Portable display signage for events, retail floors, campaigns, wayfinding, and product promotions.',
-    'details' => [
-      'Fast to deploy for campaigns, events, and temporary promotional messaging.',
-      'Well suited for indoor activations, counters, and product awareness points.',
-      'Can be paired with printed graphics and other branded display materials.',
-    ],
-    'tags' => ['Roll Up Bunting', 'Campaign Display', 'Floor Standee'],
   ],
 ];
+
+$products = [];
+foreach ($productGroups as $group) {
+  foreach ($group['items'] as $item) {
+    $item['groupTitle'] = $group['title'];
+    $products[] = $item;
+  }
+}
+
+$totalProducts = count($products);
 
 $structuredData = [
   '@context' => 'https://schema.org',
@@ -136,21 +160,47 @@ $structuredData = [
         --brand-red: #d71920;
         --brand-red-dark: #a91117;
         --ink: #111111;
+
+      .navbar-brand {
+        color: var(--ink);
+        font-weight: 800;
+        letter-spacing: 0;
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        padding-top: 0.2rem;
+        padding-bottom: 0.2rem;
+      }
         --graphite: #2c2c2c;
         --muted: #747474;
         --soft-grey: #f3f4f6;
         --line: #dddddd;
       }
 
+
+      .navbar-brand span {
+        font-size: 1.2rem;
+        font-weight: 800;
+        line-height: 1;
+        color: var(--ink);
+      }
       html {
         scroll-behavior: smooth;
       }
 
+
+        .navbar-brand {
+          gap: 10px;
+        }
       body {
         color: var(--ink);
         font-family: Arial, Helvetica, sans-serif;
         background: #ffffff;
       }
+
+        .navbar-brand span {
+          font-size: 1rem;
+        }
 
       .navbar {
         border-bottom: 1px solid var(--line);
@@ -281,6 +331,19 @@ $structuredData = [
         margin: 0;
       }
 
+      .product-nav-group + .product-nav-group {
+        margin-top: 18px;
+      }
+
+      .product-nav-group-title {
+        color: var(--muted);
+        font-size: 0.78rem;
+        font-weight: 800;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+      }
+
       .product-nav li + li {
         border-top: 1px solid #efefef;
       }
@@ -303,6 +366,90 @@ $structuredData = [
       .product-nav i {
         color: #8e8e8e;
         font-size: 0.8rem;
+      }
+
+      .product-overview {
+        margin-bottom: 28px;
+      }
+
+      .product-overview-card {
+        display: block;
+        height: 100%;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        background: #ffffff;
+        padding: 22px;
+        color: inherit;
+        text-decoration: none;
+        box-shadow: 0 14px 32px rgba(17, 17, 17, 0.04);
+        transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+      }
+
+      .product-overview-card:hover {
+        color: inherit;
+        text-decoration: none;
+        transform: translateY(-4px);
+        border-color: rgba(215, 25, 32, 0.35);
+        box-shadow: 0 18px 38px rgba(17, 17, 17, 0.08);
+      }
+
+      .product-overview-card small {
+        display: block;
+        color: var(--muted);
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+
+      .product-overview-card h3 {
+        font-size: 1.05rem;
+        font-weight: 800;
+        margin-bottom: 10px;
+      }
+
+      .product-overview-card p {
+        color: var(--muted);
+        line-height: 1.65;
+        margin-bottom: 0;
+      }
+
+      .product-group + .product-group {
+        margin-top: 40px;
+      }
+
+      .product-group-header {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px;
+        margin-bottom: 18px;
+      }
+
+      .product-group-header h3 {
+        font-size: 1.5rem;
+        font-weight: 850;
+        margin-bottom: 0;
+      }
+
+      .product-group-header p {
+        width: 100%;
+        color: var(--muted);
+        margin-bottom: 0;
+      }
+
+      .product-count {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 94px;
+        padding: 8px 12px;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        color: var(--graphite);
+        font-size: 0.82rem;
+        font-weight: 800;
+        background: #ffffff;
       }
 
       .product-section {
@@ -459,6 +606,7 @@ $structuredData = [
       <div class="container">
         <a class="navbar-brand" href="index.php" aria-label="A&T Media Sdn. Bhd.">
           <img src="assets/ant-signage-logo.png" alt="A&T Media Sdn. Bhd. logo">
+          <span>SignboardKL</span>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -495,46 +643,71 @@ $structuredData = [
             <h2 class="section-title">A focused product page for the services customers ask for most.</h2>
           </div>
           <div class="col-lg-5">
-            <p class="section-copy">Use the quick list on the left to jump between product types, then review the main details, practical use cases, and common formats for each category.</p>
+            <p class="section-copy">Products are now arranged by category, so you can keep adding new items later without changing the page structure. Just place each new product under the right group.</p>
           </div>
         </div>
         <div class="row">
           <div class="col-lg-4 col-xl-3">
             <aside class="product-nav" aria-label="Products navigation">
-              <h2>Products</h2>
-              <ul>
-                <?php foreach ($products as $product): ?>
-                  <li>
-                    <a href="#<?php echo htmlspecialchars($product['id'], ENT_QUOTES, 'UTF-8'); ?>">
-                      <i class="fas fa-angle-right" aria-hidden="true"></i>
-                      <span><?php echo htmlspecialchars($product['title'], ENT_QUOTES, 'UTF-8'); ?></span>
-                    </a>
-                  </li>
-                <?php endforeach; ?>
-              </ul>
+              <h2><?php echo $totalProducts; ?> Products</h2>
+              <?php foreach ($productGroups as $group): ?>
+                <div class="product-nav-group">
+                  <div class="product-nav-group-title"><?php echo htmlspecialchars($group['title'], ENT_QUOTES, 'UTF-8'); ?></div>
+                  <ul>
+                    <?php foreach ($group['items'] as $product): ?>
+                      <li>
+                        <a href="#<?php echo htmlspecialchars($product['id'], ENT_QUOTES, 'UTF-8'); ?>">
+                          <i class="fas fa-angle-right" aria-hidden="true"></i>
+                          <span><?php echo htmlspecialchars($product['title'], ENT_QUOTES, 'UTF-8'); ?></span>
+                        </a>
+                      </li>
+                    <?php endforeach; ?>
+                  </ul>
+                </div>
+              <?php endforeach; ?>
             </aside>
           </div>
           <div class="col-lg-8 col-xl-9">
-            <?php foreach ($products as $product): ?>
-              <article id="<?php echo htmlspecialchars($product['id'], ENT_QUOTES, 'UTF-8'); ?>" class="product-section">
-                <div class="product-head">
-                  <div class="product-icon"><i class="fas <?php echo htmlspecialchars($product['icon'], ENT_QUOTES, 'UTF-8'); ?>" aria-hidden="true"></i></div>
-                  <div>
+            <div class="row product-overview">
+              <?php foreach ($products as $product): ?>
+                <div class="col-md-6 mb-4">
+                  <a class="product-overview-card" href="#<?php echo htmlspecialchars($product['id'], ENT_QUOTES, 'UTF-8'); ?>">
+                    <small><?php echo htmlspecialchars($product['groupTitle'], ENT_QUOTES, 'UTF-8'); ?></small>
                     <h3><?php echo htmlspecialchars($product['title'], ENT_QUOTES, 'UTF-8'); ?></h3>
-                    <p class="mb-0"><?php echo htmlspecialchars($product['summary'], ENT_QUOTES, 'UTF-8'); ?></p>
-                  </div>
+                    <p><?php echo htmlspecialchars($product['summary'], ENT_QUOTES, 'UTF-8'); ?></p>
+                  </a>
                 </div>
-                <ul class="product-points">
-                  <?php foreach ($product['details'] as $detail): ?>
-                    <li><i class="fas fa-check-circle" aria-hidden="true"></i><span><?php echo htmlspecialchars($detail, ENT_QUOTES, 'UTF-8'); ?></span></li>
-                  <?php endforeach; ?>
-                </ul>
-                <div class="product-tags">
-                  <?php foreach ($product['tags'] as $tag): ?>
-                    <span><?php echo htmlspecialchars($tag, ENT_QUOTES, 'UTF-8'); ?></span>
-                  <?php endforeach; ?>
+              <?php endforeach; ?>
+            </div>
+            <?php foreach ($productGroups as $group): ?>
+              <section class="product-group" aria-labelledby="<?php echo htmlspecialchars($group['id'], ENT_QUOTES, 'UTF-8'); ?>-title">
+                <div class="product-group-header">
+                  <h3 id="<?php echo htmlspecialchars($group['id'], ENT_QUOTES, 'UTF-8'); ?>-title"><?php echo htmlspecialchars($group['title'], ENT_QUOTES, 'UTF-8'); ?></h3>
+                  <span class="product-count"><?php echo count($group['items']); ?> items</span>
+                  <p><?php echo htmlspecialchars($group['description'], ENT_QUOTES, 'UTF-8'); ?></p>
                 </div>
-              </article>
+                <?php foreach ($group['items'] as $product): ?>
+                  <article id="<?php echo htmlspecialchars($product['id'], ENT_QUOTES, 'UTF-8'); ?>" class="product-section">
+                    <div class="product-head">
+                      <div class="product-icon"><i class="fas <?php echo htmlspecialchars($product['icon'], ENT_QUOTES, 'UTF-8'); ?>" aria-hidden="true"></i></div>
+                      <div>
+                        <h3><?php echo htmlspecialchars($product['title'], ENT_QUOTES, 'UTF-8'); ?></h3>
+                        <p class="mb-0"><?php echo htmlspecialchars($product['summary'], ENT_QUOTES, 'UTF-8'); ?></p>
+                      </div>
+                    </div>
+                    <ul class="product-points">
+                      <?php foreach ($product['details'] as $detail): ?>
+                        <li><i class="fas fa-check-circle" aria-hidden="true"></i><span><?php echo htmlspecialchars($detail, ENT_QUOTES, 'UTF-8'); ?></span></li>
+                      <?php endforeach; ?>
+                    </ul>
+                    <div class="product-tags">
+                      <?php foreach ($product['tags'] as $tag): ?>
+                        <span><?php echo htmlspecialchars($tag, ENT_QUOTES, 'UTF-8'); ?></span>
+                      <?php endforeach; ?>
+                    </div>
+                  </article>
+                <?php endforeach; ?>
+              </section>
             <?php endforeach; ?>
           </div>
         </div>

@@ -310,10 +310,25 @@ $reviewSlides = array_chunk($googleReviews, 3);
         font-weight: 700;
       }
 
+      .navbar-brand span {
+        font-size: 1.2rem;
+        font-weight: 800;
+        line-height: 1;
+        color: var(--ink);
+      }
+
       .hero {
         position: relative;
         min-height: 620px;
         display: flex;
+
+        .navbar-brand {
+          gap: 10px;
+        }
+
+        .navbar-brand span {
+          font-size: 1rem;
+        }
         align-items: center;
         overflow: hidden;
         background: var(--ink);
@@ -891,6 +906,7 @@ $reviewSlides = array_chunk($googleReviews, 3);
       <div class="container">
         <a class="navbar-brand" href="#" aria-label="A&T Media Sdn. Bhd.">
           <img src="assets/ant-signage-logo.png" alt="A&T Media Sdn. Bhd. logo">
+          <span>SignboardKL</span>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
