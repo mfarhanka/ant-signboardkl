@@ -184,6 +184,10 @@ $structuredData = [
         line-height: 1;
         color: var(--ink);
       }
+
+      .navbar-brand .brand-accent {
+        color: var(--brand-red);
+      }
       html {
         scroll-behavior: smooth;
       }
@@ -606,7 +610,7 @@ $structuredData = [
       <div class="container">
         <a class="navbar-brand" href="index.php" aria-label="A&T Media Sdn. Bhd.">
           <img src="assets/ant-signage-logo.png" alt="A&T Media Sdn. Bhd. logo">
-          <span>SignboardKL</span>
+          <span>Signboard<span class="brand-accent">KL</span></span>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
