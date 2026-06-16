@@ -1,3 +1,159 @@
+<?php
+$googleReviews = [
+  [
+    'name' => 'Nur Milah',
+    'date' => '8 months ago',
+    'avatar' => 'https://lh3.googleusercontent.com/a/ACg8ocKi3C9QqGsIyk_rpjazoumj8yXqMZ7lK0z9q1_jevpybGnCnw=s120-c-rp-mo-br100',
+    'review' => '5-star Google review.',
+  ],
+  [
+    'name' => 'SoftiexDinox',
+    'date' => '8 months ago',
+    'avatar' => 'https://lh3.googleusercontent.com/a/ACg8ocLDRjDRtu8ZojDRp84V2ITBzLkyy5Usv_mTeRtAAPYRIl2c7QcL=s120-c-rp-mo-ba2-br100',
+    'review' => 'Very nice and professional service!',
+  ],
+  [
+    'name' => 'Naqiah',
+    'date' => '8 months ago',
+    'avatar' => 'https://lh3.googleusercontent.com/a-/ALV-UjVyMp7fla_djCe-qqPaNO3-Mkeyk-rzePmxMlIjXMZ6YMP9fgU=s120-c-rp-mo-br100',
+    'review' => 'Good service and quality in signboard.',
+  ],
+  [
+    'name' => 'Vennibell',
+    'date' => '8 months ago',
+    'avatar' => 'https://lh3.googleusercontent.com/a/ACg8ocIjkqeUrgapa2JRRUBiwcpwntGr1rYClth2GRAGQXx05kbERg=s120-c-rp-mo-br100',
+    'review' => 'Very good!',
+  ],
+  [
+    'name' => 'Babuwilna Wilnasani',
+    'date' => '8 months ago',
+    'avatar' => 'https://lh3.googleusercontent.com/a-/ALV-UjVduSXBfnebYs2LWBLCCeu8Em_EUwsV7cPe1Cac1X_levgaiWU=s120-c-rp-mo-br100',
+    'review' => '5-star Google review.',
+  ],
+  [
+    'name' => 'Ghost Me',
+    'date' => '8 months ago',
+    'avatar' => 'https://lh3.googleusercontent.com/a-/ALV-UjW8QFi9KKui16ogCAZEyqo1sOKAs-IClOxFqhNCR-WnoTkH9cjZ=s120-c-rp-mo-br100',
+    'review' => 'A&T Signboard team is awesome! Easy to talk and their artwork is so nice. Really satisfied with the result!',
+  ],
+  [
+    'name' => 'Admin',
+    'date' => '8 months ago',
+    'avatar' => 'https://lh3.googleusercontent.com/a/ACg8ocKPiJZhZ6u4078ByrYall4tUymuTGHbxOHK6Vy5vcHj8Xln4g=s120-c-rp-mo-br100',
+    'review' => 'Very impressed with A&T Signboard! The designer is professional and helpful, giving great design options that fit customer needs. Really satisfied with the final artwork!!',
+  ],
+  [
+    'name' => 'Fariq hakimi',
+    'date' => '8 months ago',
+    'avatar' => 'https://lh3.googleusercontent.com/a/ACg8ocIzmt-Y9jwRbAIPZ4JMH8PJ76aICaQeIqAnX2mECLRf5dV62A=s120-c-rp-mo-br100',
+    'review' => '(Translated by Google) Very good work (Original) Kerja baik sangat.',
+  ],
+  [
+    'name' => 'Syafawani Mukayat',
+    'date' => '8 months ago',
+    'avatar' => 'https://lh3.googleusercontent.com/a-/ALV-UjUpUVhZc80xaexcJ2WUKWCegxiroN-5pdRwJE3q2MA1-9wdQE4=s120-c-rp-mo-br100',
+    'review' => '5-star Google review.',
+  ],
+  [
+    'name' => 'Eugene Loo',
+    'date' => '8 months ago',
+    'avatar' => 'https://lh3.googleusercontent.com/a/ACg8ocKQxhbhIApISUBwSKkAGm0U98USLWuoFua4zdBNDRicFuRsTw=s120-c-rp-mo-br100',
+    'review' => '5-star Google review.',
+  ],
+  [
+    'name' => 'Mohd Faizal Faizaliyananas',
+    'date' => '8 months ago',
+    'avatar' => 'https://lh3.googleusercontent.com/a/ACg8ocKoFk2yJ16VRy-8UjLz9jRkOyEjM_jakj9GI5xgwkEYiseq2g=s120-c-rp-mo-br100',
+    'review' => '5-star Google review.',
+  ],
+  [
+    'name' => 'Y S Chang',
+    'date' => '8 months ago',
+    'avatar' => 'https://lh3.googleusercontent.com/a/ACg8ocJzMA_yEB8rOoyVj-MiZ6FZFdkukM-hXIUkmgvt1FcLX4rukA=s120-c-rp-mo-br100',
+    'review' => 'Excellent quality product with service.',
+  ],
+  [
+    'name' => 'Ivan “Iv.A” Ang',
+    'date' => '8 months ago',
+    'avatar' => 'https://lh3.googleusercontent.com/a/ACg8ocIQ57qQNKC_gkENINLTZ-4k3dhO3bHZR1vVwpi-wzQc8T_t3w=s120-c-rp-mo-br100',
+    'review' => 'Friendly and professional team, recommended for advertising needs and wants. Good job and keep it up!',
+  ],
+  [
+    'name' => 'shimin Tan',
+    'date' => '8 months ago',
+    'avatar' => 'https://lh3.googleusercontent.com/a-/ALV-UjUwwkKYnZK1AsCntVFo_o35idCUnwMpGsslmtvpwY-tyWYIOvCl=s120-c-rp-mo-br100',
+    'review' => '(Translated by Google) The new sign is really nice! The workmanship is very fine, and the light is on and it looks very textured. (Original) 新招牌真的很好看！做工很细，灯亮起来超有质感',
+  ],
+  [
+    'name' => 'Owen Lee',
+    'date' => '10 months ago',
+    'avatar' => 'https://lh3.googleusercontent.com/a/ACg8ocJpm7QTD08BrLRobItEF5sXNsv6w_TmXrMna-GQUFjax8EhTA=s120-c-rp-mo-ba2-br100',
+    'review' => 'Superb service & quality signage from A&T Advertising.',
+  ],
+  [
+    'name' => 'zy tan',
+    'date' => '10 months ago',
+    'avatar' => 'https://lh3.googleusercontent.com/a/ACg8ocKbwHt9WGLgVLbH3vCYwYl8m2BcNpBUcTbnKoEWXTRoEkWly7A=s120-c-rp-mo-br100',
+    'review' => 'SY Printing good service.',
+  ],
+  [
+    'name' => 'Ehsan Property',
+    'date' => '2 years ago',
+    'avatar' => 'https://lh3.googleusercontent.com/a-/ALV-UjUS362sxbJJUvYtMMGJI3hqgLAy2-Ty103_2hN3B_c3XzPqgT1a=s120-c-rp-mo-br100',
+    'review' => 'We had a great experience dealing with Mr. Ray Tan and his team. We ordered a signboard, and they provided excellent service. The font and overall design were neat and beautiful. This is the second time we\'ve ordered from this company, and I highly recommend them for their outstanding customer care and top-notch service!',
+  ],
+  [
+    'name' => 'Jessyca Yong',
+    'date' => '2 years ago',
+    'avatar' => 'https://lh3.googleusercontent.com/a-/ALV-UjWzgTPrcGxGlA-sGDfvuUTq8S9xhanSc3ThXfdOSQbXIzzsNBGYKA=s120-c-rp-mo-ba3-br100',
+    'review' => 'Highly recommend! Very responsive and reasonable pricing. Thanks Brandon for his good service. Hope to collaborate more on highway projects.',
+  ],
+  [
+    'name' => 'Hashim Abdullah',
+    'date' => '2 years ago',
+    'avatar' => 'https://lh3.googleusercontent.com/a/ACg8ocK1fKqM2NhQk6T0ayqmUjLgSf9cwS3u02U_zzkNGKZSeu6zIA=s120-c-rp-mo-br100',
+    'review' => '(Translated by Google) It\'s a pleasure to deal with A & T. All questions and suggestions received good cooperation and response. The quality of the product is also very satisfactory and most importantly the price is very reasonable. (Original) Senang berurusan dengan A & T...segala pertanyaan dan cadangan mendapat kerjasama dan respons yg baik. Kualiti produk juga amat memuaskan dan yang paling penting harga sangat berpatutan.',
+  ],
+  [
+    'name' => 'Wan Brandon',
+    'date' => '2 years ago',
+    'avatar' => 'https://lh3.googleusercontent.com/a/ACg8ocIehmaPL742CBLwOWR55HYMzxk47KAC9tsvwpwpLWDpy3Bfyc0=s120-c-rp-mo-br100',
+    'review' => 'Professional signboard maker in Klang Valley. Reasonable price, and quality product and service. Must choose A&T.',
+  ],
+  [
+    'name' => 'Shinee Pong',
+    'date' => '2 years ago',
+    'avatar' => 'https://lh3.googleusercontent.com/a/ACg8ocIL8cVGtvzHksDUWvel_T4eQzBPgZbJHQI-1yULMlOP45OEl5G9=s120-c-rp-mo-ba4-br100',
+    'review' => '5-star Google review.',
+  ],
+  [
+    'name' => 'JIA SHENG CHIN',
+    'date' => '2 years ago',
+    'avatar' => 'https://lh3.googleusercontent.com/a/ACg8ocL5DHj_rRCtoCfB43_i01NCKZaXK2h_29mDfp3jgpUu6CXdTw=s120-c-rp-mo-br100',
+    'review' => '5-star Google review.',
+  ],
+  [
+    'name' => 'R4Rei Tan (R4Rei)',
+    'date' => '2 years ago',
+    'avatar' => 'https://lh3.googleusercontent.com/a-/ALV-UjU7iRNnTubnwq9OQJZYhMfHO1CDtq5MtaArtL0H0H9pC2Cz4D3gVQ=s120-c-rp-mo-br100',
+    'review' => 'Good services.',
+  ],
+  [
+    'name' => 'Chloe Tan',
+    'date' => '3 years ago',
+    'avatar' => 'https://lh3.googleusercontent.com/a-/ALV-UjWrlZTHcIco7gzDehXzqWVOjQa20mrzctJcAU1ttEvhRZ8aQlGo=s120-c-rp-mo-br100',
+    'review' => '5-star Google review.',
+  ],
+  [
+    'name' => 'Rei Tan',
+    'date' => '3 years ago',
+    'avatar' => 'https://lh3.googleusercontent.com/a-/ALV-UjWrlZTHcIco7gzDehXzqWVOjQa20mrzctJcAU1ttEvhRZ8aQlGo=s120-c-rp-mo-br100',
+    'review' => '5-star Google review.',
+  ],
+];
+
+$reviewSlides = array_chunk($googleReviews, 3);
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -341,6 +497,180 @@
         padding: 28px;
       }
 
+      .reviews-band {
+        background: linear-gradient(180deg, #ffffff 0%, #f8f9fb 100%);
+      }
+
+      .reviews-summary {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        margin-bottom: 28px;
+      }
+
+      .reviews-score {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+      }
+
+      .reviews-score-number {
+        font-size: 3rem;
+        font-weight: 900;
+        line-height: 1;
+        color: var(--ink);
+      }
+
+      .reviews-meta strong {
+        display: block;
+        font-size: 1.15rem;
+        color: var(--ink);
+      }
+
+      .reviews-meta span {
+        color: var(--muted);
+      }
+
+      .google-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 10px 16px;
+        background: #ffffff;
+        font-weight: 700;
+        color: var(--graphite);
+      }
+
+      .google-badge img {
+        width: 24px;
+        height: 24px;
+        object-fit: contain;
+      }
+
+      .review-stars {
+        color: #f4b400;
+        letter-spacing: 2px;
+        font-size: 0.95rem;
+      }
+
+      .review-carousel {
+        position: relative;
+      }
+
+      .review-slide {
+        padding: 4px 44px;
+      }
+
+      .review-card {
+        height: 100%;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        background: #ffffff;
+        padding: 24px;
+        box-shadow: 0 16px 36px rgba(17, 17, 17, 0.06);
+      }
+
+      .review-card-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px;
+        margin-bottom: 18px;
+      }
+
+      .review-author {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        min-width: 0;
+      }
+
+      .review-avatar {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        object-fit: cover;
+        flex-shrink: 0;
+        background: var(--soft-grey);
+      }
+
+      .review-author strong,
+      .review-author span {
+        display: block;
+      }
+
+      .review-author strong {
+        font-size: 1rem;
+        color: var(--ink);
+      }
+
+      .review-author span {
+        font-size: 0.9rem;
+        color: var(--muted);
+      }
+
+      .review-google {
+        width: 24px;
+        height: 24px;
+        object-fit: contain;
+        flex-shrink: 0;
+      }
+
+      .review-card p {
+        color: var(--graphite);
+        line-height: 1.7;
+        margin-bottom: 0;
+      }
+
+      .review-control {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        border: 1px solid var(--line);
+        background: #ffffff;
+        color: var(--ink);
+        opacity: 1;
+      }
+
+      .review-control.carousel-control-prev {
+        left: 0;
+      }
+
+      .review-control.carousel-control-next {
+        right: 0;
+      }
+
+      .review-control .carousel-control-prev-icon,
+      .review-control .carousel-control-next-icon {
+        width: 14px;
+        height: 14px;
+        filter: invert(1);
+      }
+
+      .review-indicators {
+        position: static;
+        margin: 24px 0 0;
+      }
+
+      .review-indicators li {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #c4c7cf;
+        opacity: 1;
+      }
+
+      .review-indicators .active {
+        background: var(--brand-red);
+      }
+
       .step-number {
         width: 42px;
         height: 42px;
@@ -442,6 +772,18 @@
 
         .hero-actions .btn {
           width: 100%;
+        }
+
+        .reviews-score-number {
+          font-size: 2.4rem;
+        }
+
+        .review-slide {
+          padding: 4px 0;
+        }
+
+        .review-control {
+          display: none;
         }
 
         .whatsapp-float {
@@ -671,6 +1013,76 @@
               <li><i class="fas fa-check-circle"></i><span>Service coverage highlighted for Malaysia, Johor Bahru, Selangor, Kuala Lumpur, and Singapore.</span></li>
             </ul>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="reviews" class="reviews-band">
+      <div class="container">
+        <div class="row mb-4">
+          <div class="col-lg-7">
+            <div class="section-kicker">Google Reviews</div>
+            <h2 class="section-title">Trusted by customers across Klang Valley and beyond.</h2>
+          </div>
+          <div class="col-lg-5">
+            <p class="section-copy">Recent customer feedback highlights the team\'s responsiveness, design support, workmanship, and finished signboard quality.</p>
+          </div>
+        </div>
+        <div class="reviews-summary">
+          <div class="reviews-score">
+            <div class="reviews-score-number">5.0</div>
+            <div class="reviews-meta">
+              <strong>Based on 25 Reviews</strong>
+              <span class="review-stars" aria-label="5 out of 5 stars">★★★★★</span>
+            </div>
+          </div>
+          <div class="google-badge">
+            <img src="https://cdn1.npcdn.net/img/1692259633google_logo.png" alt="Google logo">
+            <span>Verified Google Reviews</span>
+          </div>
+        </div>
+        <div id="googleReviewsCarousel" class="carousel slide review-carousel" data-ride="carousel" data-interval="7000">
+          <ol class="carousel-indicators review-indicators">
+            <?php foreach ($reviewSlides as $index => $_slide): ?>
+              <li data-target="#googleReviewsCarousel" data-slide-to="<?php echo $index; ?>" class="<?php echo $index === 0 ? 'active' : ''; ?>" aria-label="Show review set <?php echo $index + 1; ?>"></li>
+            <?php endforeach; ?>
+          </ol>
+          <div class="carousel-inner">
+            <?php foreach ($reviewSlides as $slideIndex => $slide): ?>
+              <div class="carousel-item <?php echo $slideIndex === 0 ? 'active' : ''; ?>">
+                <div class="review-slide">
+                  <div class="row">
+                    <?php foreach ($slide as $review): ?>
+                      <div class="col-lg-4 col-md-6 mb-4 mb-lg-0 d-flex">
+                        <article class="review-card w-100">
+                          <div class="review-card-header">
+                            <div class="review-author">
+                              <img class="review-avatar" src="<?php echo htmlspecialchars($review['avatar'], ENT_QUOTES, 'UTF-8'); ?>" alt="<?php echo htmlspecialchars($review['name'], ENT_QUOTES, 'UTF-8'); ?> avatar">
+                              <div>
+                                <strong><?php echo htmlspecialchars($review['name'], ENT_QUOTES, 'UTF-8'); ?></strong>
+                                <span><?php echo htmlspecialchars($review['date'], ENT_QUOTES, 'UTF-8'); ?></span>
+                                <span class="review-stars" aria-hidden="true">★★★★★</span>
+                              </div>
+                            </div>
+                            <img class="review-google" src="https://cdn1.npcdn.net/img/1692259633google_logo.png" alt="Google logo">
+                          </div>
+                          <p><?php echo htmlspecialchars($review['review'], ENT_QUOTES, 'UTF-8'); ?></p>
+                        </article>
+                      </div>
+                    <?php endforeach; ?>
+                  </div>
+                </div>
+              </div>
+            <?php endforeach; ?>
+          </div>
+          <a class="carousel-control-prev review-control" href="#googleReviewsCarousel" role="button" data-slide="prev" aria-label="Previous reviews">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next review-control" href="#googleReviewsCarousel" role="button" data-slide="next" aria-label="Next reviews">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
         </div>
       </div>
     </section>
