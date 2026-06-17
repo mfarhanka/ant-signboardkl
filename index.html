@@ -395,6 +395,44 @@
         font-weight: 700;
       }
 
+      .contact-form-card {
+        border: 1px solid rgba(255, 255, 255, 0.22);
+        border-radius: 8px;
+        padding: 30px;
+        background: #ffffff;
+        color: var(--ink);
+        box-shadow: 0 18px 42px rgba(0, 0, 0, 0.24);
+      }
+
+      .contact-form-card h3 {
+        font-size: 1.25rem;
+        font-weight: 850;
+        margin-bottom: 18px;
+      }
+
+      .contact-form-card label {
+        color: var(--graphite);
+        font-size: 0.9rem;
+        font-weight: 800;
+      }
+
+      .contact-form-card .form-control {
+        min-height: 48px;
+        border-color: #d8dbe0;
+        border-radius: 8px;
+        color: var(--ink);
+      }
+
+      .contact-form-card textarea.form-control {
+        min-height: 132px;
+        resize: vertical;
+      }
+
+      .contact-form-card .form-control:focus {
+        border-color: var(--brand-red);
+        box-shadow: 0 0 0 0.2rem rgba(215, 25, 32, 0.16);
+      }
+
       footer {
         background: #ffffff;
         border-top: 1px solid var(--line);
@@ -732,19 +770,57 @@
 
     <section id="contact" class="cta">
       <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-7 mb-4 mb-lg-0">
+        <div class="row align-items-start">
+          <div class="col-lg-5 mb-4 mb-lg-0">
             <div class="section-kicker">Get a quote</div>
-            <h2 class="section-title mb-3">Need signboard, signage, or printing support?</h2>
-            <p class="section-copy mb-0">Send your project details, artwork, measurements, and location. A&T Media can help with recommendations, production, and installation planning.</p>
-          </div>
-          <div class="col-lg-4 offset-lg-1">
-            <div class="contact-box">
+            <h2 class="section-title mb-3">Contact us for signboard, signage, or printing support.</h2>
+            <p class="section-copy">Send your project details, artwork, measurements, and location. A&T Media can help with recommendations, production, and installation planning.</p>
+            <div class="contact-box mt-4">
               <p class="mb-3"><i class="fas fa-phone-alt mr-2 text-danger"></i><a href="tel:+60167013295">+60 16-701 3295</a></p>
               <p class="mb-3"><i class="fas fa-envelope mr-2 text-danger"></i><a href="mailto:antadv.rei@gmail.com">antadv.rei@gmail.com</a></p>
-              <p class="mb-4"><i class="fas fa-map-marker-alt mr-2 text-danger"></i>16, Jalan Nilam 1/6, Taman Teknologi Tinggi Subang, 47500 Subang Jaya, Selangor, Malaysia.</p>
-              <a class="btn btn-red btn-block" href="mailto:antadv.rei@gmail.com"><i class="fas fa-paper-plane mr-2"></i>Email Your Brief</a>
+              <p class="mb-0"><i class="fas fa-map-marker-alt mr-2 text-danger"></i>16, Jalan Nilam 1/6, Taman Teknologi Tinggi Subang, 47500 Subang Jaya, Selangor, Malaysia.</p>
             </div>
+          </div>
+          <div class="col-lg-7">
+            <form class="contact-form-card" action="mailto:antadv.rei@gmail.com" method="post" enctype="text/plain">
+              <h3>Tell us about your project</h3>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="contactName">Name</label>
+                  <input id="contactName" class="form-control" type="text" name="Name" autocomplete="name" required>
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="contactPhone">Phone</label>
+                  <input id="contactPhone" class="form-control" type="tel" name="Phone" autocomplete="tel" required>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="contactEmail">Email</label>
+                  <input id="contactEmail" class="form-control" type="email" name="Email" autocomplete="email">
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="contactService">Service</label>
+                  <select id="contactService" class="form-control" name="Service">
+                    <option value="Signboard">Signboard</option>
+                    <option value="Signage">Signage</option>
+                    <option value="Printing">Printing</option>
+                    <option value="Fabric Lightbox">Fabric Lightbox</option>
+                    <option value="3D Lettering">3D Lettering</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="contactLocation">Project location</label>
+                <input id="contactLocation" class="form-control" type="text" name="Project Location" placeholder="Kuala Lumpur, Selangor, Johor Bahru, etc.">
+              </div>
+              <div class="form-group">
+                <label for="contactMessage">Project details</label>
+                <textarea id="contactMessage" class="form-control" name="Project Details" placeholder="Share size, quantity, timeline, artwork status, installation needs, or reference ideas." required></textarea>
+              </div>
+              <button class="btn btn-red btn-lg btn-block" type="submit"><i class="fas fa-paper-plane mr-2"></i>Send Enquiry</button>
+            </form>
           </div>
         </div>
       </div>
