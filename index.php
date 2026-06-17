@@ -1,8 +1,8 @@
 <?php
 $siteName = 'A&T Media Sdn. Bhd.';
-$siteTitle = 'A&T Media Sdn. Bhd. | Signboard, Signage & Printing Malaysia';
+$siteTitle = 'A&T Media Sdn. Bhd. | Signboard, Signage & Printing KL';
 $siteDescription = 'A&T Media Sdn. Bhd. provides one-stop signboard, signage, printing, design, production, and installation services in Malaysia.';
-$siteKeywords = 'signboard Malaysia, signage Kuala Lumpur, signage Selangor, printing Malaysia, 3D lettering, lightbox signage, billboard signage';
+$siteKeywords = 'signboard Kuala Lumpur, signage KL, signage Klang Valley, signage Selangor, signage Seremban, 3D lettering, lightbox signage, billboard signage';
 $sitePhone = '+60 16-701 3295';
 $siteEmail = 'antadv.rei@gmail.com';
 $siteUrl = 'http://signboardkl.com.my';
@@ -39,11 +39,10 @@ $structuredData = [
   'priceRange' => '$$',
   'address' => $siteAddress,
   'areaServed' => [
-    'Malaysia',
     'Kuala Lumpur',
+    'Klang Valley',
     'Selangor',
-    'Johor Bahru',
-    'Singapore',
+    'Seremban',
   ],
   'aggregateRating' => [
     '@type' => 'AggregateRating',
@@ -855,6 +854,21 @@ $reviewSlides = array_chunk($googleReviews, 3);
         padding: 24px 0;
       }
 
+      .footer-brand {
+        color: var(--ink);
+        font-weight: 800;
+        margin-bottom: 4px;
+      }
+
+      .footer-tagline {
+        margin-bottom: 4px;
+      }
+
+      .footer-group,
+      .footer-copyright {
+        font-size: 0.92rem;
+      }
+
       .whatsapp-float {
         position: fixed;
         right: 24px;
@@ -988,7 +1002,7 @@ $reviewSlides = array_chunk($googleReviews, 3);
           </div>
           <div class="col-md-4 quick-item px-3">
             <i class="fas fa-map-marker-alt"></i>
-            <div><strong>Malaysia & Singapore</strong><span>Serving JB, Selangor, KL and beyond</span></div>
+            <div><strong>KL, Klang Valley & Selangor</strong><span>Serving Kuala Lumpur, Selangor and Seremban</span></div>
           </div>
           <div class="col-md-4 quick-item px-3">
             <i class="fas fa-bolt"></i>
@@ -1158,7 +1172,7 @@ $reviewSlides = array_chunk($googleReviews, 3);
             <ul class="check-list">
               <li><i class="fas fa-check-circle"></i><span>In-house support for production, design, marketing, on-site installation, and evaluation.</span></li>
               <li><i class="fas fa-check-circle"></i><span>Products covering signboard, signage, printing, fabric lightbox, standee signage, and 3D lettering.</span></li>
-              <li><i class="fas fa-check-circle"></i><span>Service coverage highlighted for Malaysia, Johor Bahru, Selangor, Kuala Lumpur, and Singapore.</span></li>
+              <li><i class="fas fa-check-circle"></i><span>Service coverage highlighted for Kuala Lumpur (KL), Klang Valley, Selangor, and Seremban.</span></li>
             </ul>
           </div>
         </div>
@@ -1170,7 +1184,7 @@ $reviewSlides = array_chunk($googleReviews, 3);
         <div class="row mb-4">
           <div class="col-lg-7">
             <div class="section-kicker">Google Reviews</div>
-            <h2 class="section-title">Trusted by customers across Klang Valley and beyond.</h2>
+            <h2 class="section-title">Trusted by customers across Klang Valley, Selangor, and Seremban.</h2>
           </div>
           <div class="col-lg-5">
             <p class="section-copy">Recent customer feedback highlights the team\'s responsiveness, design support, workmanship, and finished signboard quality.</p>
@@ -1313,7 +1327,7 @@ $reviewSlides = array_chunk($googleReviews, 3);
               </div>
               <div class="form-group">
                 <label for="contactLocation">Project location</label>
-                <input id="contactLocation" class="form-control" type="text" name="Project Location" placeholder="Kuala Lumpur, Selangor, Johor Bahru, etc.">
+                <input id="contactLocation" class="form-control" type="text" name="Project Location" placeholder="Kuala Lumpur, Klang Valley, Selangor, Seremban">
               </div>
               <div class="form-group">
                 <label for="contactMessage">Project details</label>
@@ -1327,9 +1341,11 @@ $reviewSlides = array_chunk($googleReviews, 3);
     </section>
 
     <footer>
-      <div class="container d-flex flex-column flex-md-row justify-content-between align-items-md-center">
-        <div><strong class="text-dark">A&T <span class="text-danger">Media</span></strong> | Signboard, signage and printing</div>
-        <div class="mt-2 mt-md-0">Consulting, design, production, installation and evaluation.</div>
+      <div class="container">
+        <div class="footer-brand">A&amp;T Media Sdn. Bhd.</div>
+        <div class="footer-tagline">Trusted Signboard Supplier in Kuala Lumpur Since 2022</div>
+        <div class="footer-group">Part of ANT Group Malaysia</div>
+        <div class="footer-copyright mt-3">Copyright &copy; 2026 A&amp;T Media Sdn. Bhd. 202501057902 (1659308-W) All rights reserved.</div>
       </div>
     </footer>
 

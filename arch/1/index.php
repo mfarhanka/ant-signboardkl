@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="A&T Media Sdn. Bhd. provides one-stop signboard, signage, printing, design, production, and installation services in Malaysia.">
-    <title>A&T Media Sdn. Bhd. | Signboard, Signage & Printing Malaysia</title>
+    <title>A&T Media Sdn. Bhd. | Signboard, Signage & Printing KL</title>
     <link rel="preconnect" href="https://stackpath.bootstrapcdn.com">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -498,7 +498,7 @@
           </div>
           <div class="col-md-4 quick-item px-3">
             <i class="fas fa-map-marker-alt"></i>
-            <div><strong>Malaysia & Singapore</strong><span>Serving JB, Selangor, KL and beyond</span></div>
+            <div><strong>KL, Klang Valley & Selangor</strong><span>Serving Kuala Lumpur, Selangor and Seremban</span></div>
           </div>
           <div class="col-md-4 quick-item px-3">
             <i class="fas fa-bolt"></i>
@@ -668,7 +668,7 @@
             <ul class="check-list">
               <li><i class="fas fa-check-circle"></i><span>In-house support for production, design, marketing, on-site installation, and evaluation.</span></li>
               <li><i class="fas fa-check-circle"></i><span>Products covering signboard, signage, printing, fabric lightbox, standee signage, and 3D lettering.</span></li>
-              <li><i class="fas fa-check-circle"></i><span>Service coverage highlighted for Malaysia, Johor Bahru, Selangor, Kuala Lumpur, and Singapore.</span></li>
+              <li><i class="fas fa-check-circle"></i><span>Service coverage highlighted for Kuala Lumpur (KL), Klang Valley, Selangor, and Seremban.</span></li>
             </ul>
           </div>
         </div>

@@ -1,8 +1,8 @@
 <?php
 $siteName = 'A&T Media Sdn. Bhd.';
-$siteTitle = 'Products | A&T Media Sdn. Bhd. Signboard, Signage & Printing Malaysia';
+$siteTitle = 'Products | A&T Media Sdn. Bhd. Signboard, Signage & Printing KL';
 $siteDescription = 'Explore A&T Media products including 3D box up lettering, signboard, signage, printing, fabric lightbox, and standee signage solutions in Malaysia.';
-$siteKeywords = 'products signboard Malaysia, 3D box up lettering, fabric lightbox, standee signage, signage products Kuala Lumpur';
+$siteKeywords = 'products signboard Kuala Lumpur, products signboard KL, 3D box up lettering, fabric lightbox, standee signage, signage products Klang Valley';
 $siteUrl = 'http://signboardkl.com.my';
 $canonicalUrl = rtrim($siteUrl, '/') . '/products.php';
 $ogImage = rtrim($siteUrl, '/') . '/assets/signboardkl-hero.png';
@@ -583,6 +583,21 @@ $structuredData = [
         padding: 24px 0;
       }
 
+      .footer-brand {
+        color: var(--ink);
+        font-weight: 800;
+        margin-bottom: 4px;
+      }
+
+      .footer-tagline {
+        margin-bottom: 4px;
+      }
+
+      .footer-group,
+      .footer-copyright {
+        font-size: 0.92rem;
+      }
+
       @media (max-width: 991.98px) {
         .product-nav {
           position: static;
@@ -779,9 +794,11 @@ $structuredData = [
     </section>
 
     <footer>
-      <div class="container d-flex flex-column flex-md-row justify-content-between align-items-md-center">
-        <div><strong class="text-dark">A&T <span class="text-danger">Media</span></strong> | Signboard, signage and printing</div>
-        <div class="mt-2 mt-md-0">Consulting, design, production, installation and evaluation.</div>
+      <div class="container">
+        <div class="footer-brand">A&amp;T Media Sdn. Bhd.</div>
+        <div class="footer-tagline">Trusted Signboard Supplier in Kuala Lumpur Since 2022</div>
+        <div class="footer-group">Part of ANT Group Malaysia</div>
+        <div class="footer-copyright mt-3">Copyright &copy; 2026 A&amp;T Media Sdn. Bhd. 202501057902 (1659308-W) All rights reserved.</div>
       </div>
     </footer>
 

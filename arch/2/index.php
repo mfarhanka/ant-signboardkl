@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="A&T Media Sdn. Bhd. provides one-stop signboard, signage, printing, design, production, and installation services in Malaysia.">
-    <title>A&T Media Sdn. Bhd. | Signboard, Signage & Printing Malaysia</title>
+    <title>A&T Media Sdn. Bhd. | Signboard, Signage & Printing KL</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         .bg-kl-red { background-color: #E11D48; }
@@ -64,7 +64,7 @@
             </div>
             <div class="grid gap-4 text-slate-700">
                 <div class="bg-white p-6 rounded-lg border border-slate-200">In-house support for production, design, marketing, on-site installation, and evaluation.</div>
-                <div class="bg-white p-6 rounded-lg border border-slate-200">Serving Malaysia, Johor Bahru, Selangor, Kuala Lumpur, and Singapore.</div>
+                <div class="bg-white p-6 rounded-lg border border-slate-200">Serving Kuala Lumpur (KL), Klang Valley, Selangor, and Seremban.</div>
             </div>
         </div>
     </section>
