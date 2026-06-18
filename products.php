@@ -619,7 +619,6 @@ $structuredData = [
       .product-image img {
         height: 100%;
         object-fit: cover;
-        opacity: 0.7;
         width: 100%;
       }
 
@@ -665,6 +664,19 @@ $structuredData = [
 
       .product-card .btn {
         margin-top: auto;
+      }
+
+      .product-detail-link {
+        color: inherit;
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        text-decoration: none;
+      }
+
+      .product-detail-link:hover {
+        color: inherit;
+        text-decoration: none;
       }
 
       .catalog-pagination {
@@ -862,14 +874,18 @@ $structuredData = [
               <?php foreach ($products as $product): ?>
                 <div class="col-md-6 col-xl-4 mb-4">
                   <article id="<?php echo htmlspecialchars($product['id'], ENT_QUOTES, 'UTF-8'); ?>" class="product-card">
-                    <div class="product-image">
-                      <img src="<?php echo htmlspecialchars($product['image'], ENT_QUOTES, 'UTF-8'); ?>" alt="<?php echo htmlspecialchars($product['title'], ENT_QUOTES, 'UTF-8'); ?>">
-                      <div class="product-icon"><i class="fas <?php echo htmlspecialchars($product['icon'], ENT_QUOTES, 'UTF-8'); ?>" aria-hidden="true"></i></div>
-                    </div>
-                    <div class="product-card-body">
-                      <small><?php echo htmlspecialchars($product['category'], ENT_QUOTES, 'UTF-8'); ?></small>
-                      <h3><?php echo htmlspecialchars($product['title'], ENT_QUOTES, 'UTF-8'); ?></h3>
-                      <p><?php echo htmlspecialchars($product['summary'], ENT_QUOTES, 'UTF-8'); ?></p>
+                    <a class="product-detail-link" href="product.php?id=<?php echo rawurlencode($product['id']); ?>">
+                      <div class="product-image">
+                        <img src="<?php echo htmlspecialchars($product['image'], ENT_QUOTES, 'UTF-8'); ?>" alt="<?php echo htmlspecialchars($product['title'], ENT_QUOTES, 'UTF-8'); ?>">
+                        <div class="product-icon"><i class="fas <?php echo htmlspecialchars($product['icon'], ENT_QUOTES, 'UTF-8'); ?>" aria-hidden="true"></i></div>
+                      </div>
+                      <div class="product-card-body">
+                        <small><?php echo htmlspecialchars($product['category'], ENT_QUOTES, 'UTF-8'); ?></small>
+                        <h3><?php echo htmlspecialchars($product['title'], ENT_QUOTES, 'UTF-8'); ?></h3>
+                        <p><?php echo htmlspecialchars($product['summary'], ENT_QUOTES, 'UTF-8'); ?></p>
+                      </div>
+                    </a>
+                    <div class="product-card-body pt-0">
                       <a class="btn btn-red btn-sm" href="<?php echo htmlspecialchars($whatsAppUrl, ENT_QUOTES, 'UTF-8'); ?>">
                         <i class="fab fa-whatsapp mr-1" aria-hidden="true"></i> WhatsApp Us
                       </a>
