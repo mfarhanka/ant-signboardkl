@@ -260,6 +260,10 @@ $editProduct = $editProductId !== '' ? ($catalog['products'][catalog_find_index(
       .table td, .table th { vertical-align: middle; }
       .muted { color: #777777; font-size: 0.92rem; }
       .login-card { max-width: 430px; margin: 8vh auto; }
+      .panel-header { align-items: center; display: flex; gap: 14px; justify-content: space-between; margin-bottom: 18px; }
+      .panel-header h2 { margin-bottom: 0; }
+      .modal-content { border-radius: 8px; }
+      .modal-title { font-weight: 850; }
       textarea.form-control { min-height: 116px; }
     </style>
   </head>
@@ -294,124 +298,39 @@ $editProduct = $editProductId !== '' ? ($catalog['products'][catalog_find_index(
         <?php foreach ($messages as $message): ?><div class="alert alert-success"><?php echo h($message); ?></div><?php endforeach; ?>
         <?php foreach ($errors as $error): ?><div class="alert alert-danger"><?php echo h($error); ?></div><?php endforeach; ?>
 
-        <div class="row">
-          <div class="col-lg-5">
-            <section class="panel">
-              <h2><?php echo $editCategory ? 'Edit Category' : 'Add Category'; ?></h2>
-              <form method="post">
-                <input type="hidden" name="action" value="save_category">
-                <input type="hidden" name="id" value="<?php echo h($editCategory['id'] ?? ''); ?>">
-                <div class="form-group">
-                  <label for="categoryTitle">Title</label>
-                  <input id="categoryTitle" class="form-control" name="title" value="<?php echo h($editCategory['title'] ?? ''); ?>" required>
-                </div>
-                <div class="form-group">
-                  <label for="parentId">Parent Category</label>
-                  <select id="parentId" class="form-control" name="parent_id">
-                    <option value="">Top level</option>
-                    <?php foreach (catalog_category_options($catalog, $editCategory['id'] ?? null) as $option): ?>
-                      <option value="<?php echo h($option['id']); ?>" <?php echo (($editCategory['parent_id'] ?? '') === $option['id']) ? 'selected' : ''; ?>><?php echo h($option['title']); ?></option>
-                    <?php endforeach; ?>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label for="categorySeoTitle">SEO Title</label>
-                  <input id="categorySeoTitle" class="form-control" name="seo_title" value="<?php echo h($editCategory['seo_title'] ?? ''); ?>">
-                </div>
-                <div class="form-group">
-                  <label for="categoryKeywords">SEO Keywords</label>
-                  <input id="categoryKeywords" class="form-control" name="seo_keywords" value="<?php echo h($editCategory['seo_keywords'] ?? ''); ?>">
-                </div>
-                <div class="form-group">
-                  <label for="categoryMeta">Meta Description</label>
-                  <textarea id="categoryMeta" class="form-control" name="meta_description"><?php echo h($editCategory['meta_description'] ?? ''); ?></textarea>
-                </div>
-                <button class="btn btn-red" type="submit">Save Category</button>
-                <?php if ($editCategory): ?><a class="btn btn-link" href="products.php">Cancel</a><?php endif; ?>
-              </form>
-            </section>
-          </div>
-          <div class="col-lg-7">
-            <section class="panel">
-              <h2>Categories</h2>
-              <div class="table-responsive">
-                <table class="table table-sm">
-                  <thead><tr><th>Title</th><th>Parent</th><th class="text-right">Actions</th></tr></thead>
-                  <tbody>
-                    <?php foreach ($catalog['categories'] as $category): ?>
-                      <tr>
-                        <td><?php echo h($category['title']); ?></td>
-                        <td><?php echo h($category['parent_id'] ? catalog_category_title($categoryMap, $category['parent_id']) : 'Top level'); ?></td>
-                        <td class="text-right">
-                          <a class="btn btn-outline-secondary btn-sm" href="?edit_category=<?php echo h($category['id']); ?>">Edit</a>
-                          <form class="d-inline" method="post" onsubmit="return confirm('Delete this category?');">
-                            <input type="hidden" name="action" value="delete_category">
-                            <input type="hidden" name="id" value="<?php echo h($category['id']); ?>">
-                            <button class="btn btn-outline-danger btn-sm" type="submit">Delete</button>
-                          </form>
-                        </td>
-                      </tr>
-                    <?php endforeach; ?>
-                  </tbody>
-                </table>
-              </div>
-            </section>
-          </div>
-        </div>
-
         <section class="panel">
-          <h2><?php echo $editProduct ? 'Edit Product' : 'Add Product'; ?></h2>
-          <form method="post" enctype="multipart/form-data">
-            <input type="hidden" name="action" value="save_product">
-            <input type="hidden" name="id" value="<?php echo h($editProduct['id'] ?? ''); ?>">
-            <input type="hidden" name="existing_image" value="<?php echo h($editProduct['image'] ?? ''); ?>">
-            <div class="row">
-              <div class="col-md-6 form-group">
-                <label for="productTitle">Title</label>
-                <input id="productTitle" class="form-control" name="title" value="<?php echo h($editProduct['title'] ?? ''); ?>" required>
-              </div>
-              <div class="col-md-6 form-group">
-                <label for="productCategory">Category</label>
-                <select id="productCategory" class="form-control" name="category_id">
-                  <option value="">Uncategorized</option>
-                  <?php foreach ($categoryOptions as $option): ?>
-                    <option value="<?php echo h($option['id']); ?>" <?php echo (($editProduct['category_id'] ?? '') === $option['id']) ? 'selected' : ''; ?>><?php echo h($option['title']); ?></option>
-                  <?php endforeach; ?>
-                </select>
-              </div>
-              <div class="col-12 form-group">
-                <label for="description">Description</label>
-                <textarea id="description" class="form-control" name="description"><?php echo h($editProduct['description'] ?? ''); ?></textarea>
-              </div>
-              <div class="col-md-6 form-group">
-                <label for="photo">Photo Upload</label>
-                <input id="photo" class="form-control-file" type="file" name="photo" accept="image/jpeg,image/png,image/webp,image/gif">
-                <?php if (!empty($editProduct['image'])): ?><div class="muted mt-2">Current: <?php echo h($editProduct['image']); ?></div><?php endif; ?>
-              </div>
-              <div class="col-md-6 form-group">
-                <label for="icon">Font Awesome Icon</label>
-                <input id="icon" class="form-control" name="icon" value="<?php echo h($editProduct['icon'] ?? 'fa-sign'); ?>">
-              </div>
-              <div class="col-md-6 form-group">
-                <label for="seoTitle">SEO Title</label>
-                <input id="seoTitle" class="form-control" name="seo_title" value="<?php echo h($editProduct['seo_title'] ?? ''); ?>">
-              </div>
-              <div class="col-md-6 form-group">
-                <label for="seoKeywords">SEO Keywords</label>
-                <input id="seoKeywords" class="form-control" name="seo_keywords" value="<?php echo h($editProduct['seo_keywords'] ?? ''); ?>">
-              </div>
-              <div class="col-12 form-group">
-                <label for="metaDescription">Meta Description</label>
-                <textarea id="metaDescription" class="form-control" name="meta_description"><?php echo h($editProduct['meta_description'] ?? ''); ?></textarea>
-              </div>
-            </div>
-            <button class="btn btn-red" type="submit">Save Product</button>
-            <?php if ($editProduct): ?><a class="btn btn-link" href="products.php">Cancel</a><?php endif; ?>
-          </form>
+          <div class="panel-header">
+            <h2>Categories</h2>
+            <button class="btn btn-red btn-sm" type="button" data-toggle="modal" data-target="#categoryModal">Add Category</button>
+          </div>
+          <div class="table-responsive">
+            <table class="table table-sm">
+              <thead><tr><th>Title</th><th>Parent</th><th class="text-right">Actions</th></tr></thead>
+              <tbody>
+                <?php foreach ($catalog['categories'] as $category): ?>
+                  <tr>
+                    <td><?php echo h($category['title']); ?></td>
+                    <td><?php echo h($category['parent_id'] ? catalog_category_title($categoryMap, $category['parent_id']) : 'Top level'); ?></td>
+                    <td class="text-right">
+                      <a class="btn btn-outline-secondary btn-sm" href="?edit_category=<?php echo h($category['id']); ?>">Edit</a>
+                      <form class="d-inline" method="post" onsubmit="return confirm('Delete this category?');">
+                        <input type="hidden" name="action" value="delete_category">
+                        <input type="hidden" name="id" value="<?php echo h($category['id']); ?>">
+                        <button class="btn btn-outline-danger btn-sm" type="submit">Delete</button>
+                      </form>
+                    </td>
+                  </tr>
+                <?php endforeach; ?>
+              </tbody>
+            </table>
+          </div>
         </section>
 
         <section class="panel">
-          <h2>Products</h2>
+          <div class="panel-header">
+            <h2>Products</h2>
+            <button class="btn btn-red btn-sm" type="button" data-toggle="modal" data-target="#productModal">Add Product</button>
+          </div>
           <div class="table-responsive">
             <table class="table">
               <thead><tr><th>Photo</th><th>Product</th><th>Category</th><th>SEO</th><th class="text-right">Actions</th></tr></thead>
@@ -423,7 +342,7 @@ $editProduct = $editProductId !== '' ? ($catalog['products'][catalog_find_index(
                     <td><?php echo h(catalog_category_title($categoryMap, $product['category_id'] ?? '')); ?></td>
                     <td class="muted"><?php echo h($product['seo_title'] ?: 'No SEO title'); ?></td>
                     <td class="text-right">
-                      <a class="btn btn-outline-secondary btn-sm" href="?edit_product=<?php echo h($product['id']); ?>#productTitle">Edit</a>
+                      <a class="btn btn-outline-secondary btn-sm" href="?edit_product=<?php echo h($product['id']); ?>">Edit</a>
                       <form class="d-inline" method="post" onsubmit="return confirm('Delete this product?');">
                         <input type="hidden" name="action" value="delete_product">
                         <input type="hidden" name="id" value="<?php echo h($product['id']); ?>">
@@ -436,7 +355,124 @@ $editProduct = $editProductId !== '' ? ($catalog['products'][catalog_find_index(
             </table>
           </div>
         </section>
+
+        <div class="modal fade" id="categoryModal" tabindex="-1" aria-labelledby="categoryModalTitle" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <form method="post">
+                <div class="modal-header">
+                  <h2 class="modal-title h5" id="categoryModalTitle"><?php echo $editCategory ? 'Edit Category' : 'Add Category'; ?></h2>
+                  <a class="close" href="products.php" aria-label="Close"><span aria-hidden="true">&times;</span></a>
+                </div>
+                <div class="modal-body">
+                  <input type="hidden" name="action" value="save_category">
+                  <input type="hidden" name="id" value="<?php echo h($editCategory['id'] ?? ''); ?>">
+                  <div class="form-group">
+                    <label for="categoryTitle">Title</label>
+                    <input id="categoryTitle" class="form-control" name="title" value="<?php echo h($editCategory['title'] ?? ''); ?>" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="parentId">Parent Category</label>
+                    <select id="parentId" class="form-control" name="parent_id">
+                      <option value="">Top level</option>
+                      <?php foreach (catalog_category_options($catalog, $editCategory['id'] ?? null) as $option): ?>
+                        <option value="<?php echo h($option['id']); ?>" <?php echo (($editCategory['parent_id'] ?? '') === $option['id']) ? 'selected' : ''; ?>><?php echo h($option['title']); ?></option>
+                      <?php endforeach; ?>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="categorySeoTitle">SEO Title</label>
+                    <input id="categorySeoTitle" class="form-control" name="seo_title" value="<?php echo h($editCategory['seo_title'] ?? ''); ?>">
+                  </div>
+                  <div class="form-group">
+                    <label for="categoryKeywords">SEO Keywords</label>
+                    <input id="categoryKeywords" class="form-control" name="seo_keywords" value="<?php echo h($editCategory['seo_keywords'] ?? ''); ?>">
+                  </div>
+                  <div class="form-group mb-0">
+                    <label for="categoryMeta">Meta Description</label>
+                    <textarea id="categoryMeta" class="form-control" name="meta_description"><?php echo h($editCategory['meta_description'] ?? ''); ?></textarea>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <a class="btn btn-outline-secondary" href="products.php">Cancel</a>
+                  <button class="btn btn-red" type="submit">Save Category</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalTitle" aria-hidden="true">
+          <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+              <form method="post" enctype="multipart/form-data">
+                <div class="modal-header">
+                  <h2 class="modal-title h5" id="productModalTitle"><?php echo $editProduct ? 'Edit Product' : 'Add Product'; ?></h2>
+                  <a class="close" href="products.php" aria-label="Close"><span aria-hidden="true">&times;</span></a>
+                </div>
+                <div class="modal-body">
+                  <input type="hidden" name="action" value="save_product">
+                  <input type="hidden" name="id" value="<?php echo h($editProduct['id'] ?? ''); ?>">
+                  <input type="hidden" name="existing_image" value="<?php echo h($editProduct['image'] ?? ''); ?>">
+                  <div class="row">
+                    <div class="col-md-6 form-group">
+                      <label for="productTitle">Title</label>
+                      <input id="productTitle" class="form-control" name="title" value="<?php echo h($editProduct['title'] ?? ''); ?>" required>
+                    </div>
+                    <div class="col-md-6 form-group">
+                      <label for="productCategory">Category</label>
+                      <select id="productCategory" class="form-control" name="category_id">
+                        <option value="">Uncategorized</option>
+                        <?php foreach ($categoryOptions as $option): ?>
+                          <option value="<?php echo h($option['id']); ?>" <?php echo (($editProduct['category_id'] ?? '') === $option['id']) ? 'selected' : ''; ?>><?php echo h($option['title']); ?></option>
+                        <?php endforeach; ?>
+                      </select>
+                    </div>
+                    <div class="col-12 form-group">
+                      <label for="description">Description</label>
+                      <textarea id="description" class="form-control" name="description"><?php echo h($editProduct['description'] ?? ''); ?></textarea>
+                    </div>
+                    <div class="col-md-6 form-group">
+                      <label for="photo">Photo Upload</label>
+                      <input id="photo" class="form-control-file" type="file" name="photo" accept="image/jpeg,image/png,image/webp,image/gif">
+                      <?php if (!empty($editProduct['image'])): ?><div class="muted mt-2">Current: <?php echo h($editProduct['image']); ?></div><?php endif; ?>
+                    </div>
+                    <div class="col-md-6 form-group">
+                      <label for="icon">Font Awesome Icon</label>
+                      <input id="icon" class="form-control" name="icon" value="<?php echo h($editProduct['icon'] ?? 'fa-sign'); ?>">
+                    </div>
+                    <div class="col-md-6 form-group">
+                      <label for="seoTitle">SEO Title</label>
+                      <input id="seoTitle" class="form-control" name="seo_title" value="<?php echo h($editProduct['seo_title'] ?? ''); ?>">
+                    </div>
+                    <div class="col-md-6 form-group">
+                      <label for="seoKeywords">SEO Keywords</label>
+                      <input id="seoKeywords" class="form-control" name="seo_keywords" value="<?php echo h($editProduct['seo_keywords'] ?? ''); ?>">
+                    </div>
+                    <div class="col-12 form-group mb-0">
+                      <label for="metaDescription">Meta Description</label>
+                      <textarea id="metaDescription" class="form-control" name="meta_description"><?php echo h($editProduct['meta_description'] ?? ''); ?></textarea>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <a class="btn btn-outline-secondary" href="products.php">Cancel</a>
+                  <button class="btn btn-red" type="submit">Save Product</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
       <?php endif; ?>
     </main>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <?php if (admin_is_logged_in() && $editCategory): ?>
+      <script>$(function () { $('#categoryModal').modal('show'); });</script>
+    <?php endif; ?>
+    <?php if (admin_is_logged_in() && $editProduct): ?>
+      <script>$(function () { $('#productModal').modal('show'); });</script>
+    <?php endif; ?>
   </body>
 </html>
