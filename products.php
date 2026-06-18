@@ -1,4 +1,6 @@
 <?php
+require_once __DIR__ . '/includes/catalog.php';
+
 $siteName = 'A&T Media Sdn. Bhd.';
 $siteTitle = 'Products | A&T Media Sdn. Bhd. Signboard, Signage & Printing KL';
 $siteDescription = 'Explore A&T Media products including 3D box up lettering, signboard, signage, printing, fabric lightbox, and standee signage solutions for Kuala Lumpur (KL), Klang Valley, Selangor, and Seremban.';
@@ -10,89 +12,22 @@ $logoImage = rtrim($siteUrl, '/') . '/assets/ant-signage-logo.png';
 
 $whatsAppUrl = 'https://wa.me/60167013295';
 
-$categoryTree = [
-  [
-    'title' => '3D Box Up Lettering',
-    'children' => ['Acrylic Lettering', 'Aluminium / Acrylic', 'Aluminium Lettering', 'Stainless Steel'],
-  ],
-  [
-    'title' => 'Signboard',
-    'children' => [
-      ['title' => '3D Lighting Signboard', 'children' => ['Back-Lit Signboard', 'Front-Lit Signboard']],
-      ['title' => '3D Non-Lighting Signboard', 'children' => ['Aluminium Box Up', 'PVC Foamboard 3D Wording', 'Stainless Steel Box Up']],
-      ['title' => 'Lightbox', 'children' => ['Soft Fabric Lightbox']],
-      ['title' => 'Normal Signboard', 'children' => ['Aluminium Strip Signboard Base']],
-    ],
-  ],
-  [
-    'title' => 'Signage',
-    'children' => [
-      ['title' => 'Billboard & Hoarding', 'children' => ['Construction Board']],
-      ['title' => 'Indoor Signage', 'children' => ['Acrylic 3D Signage', 'Acrylic Signage', 'Foamboard', 'Stainless Steel Signage']],
-      'LED Banner / Display / Neon',
-      'Pylon & Directional Signage',
-      ['title' => 'Road Sign', 'children' => ['JKR Roadsign', 'Normal Roadsign']],
-    ],
-  ],
-  [
-    'title' => 'Printing',
-    'children' => [
-      ['title' => 'Display Set', 'children' => ['Wood Easel Stand']],
-      ['title' => 'Exhibition Booth', 'children' => ['Backdrop Display Set', 'Normal Roll Up Bunting']],
-      ['title' => 'Sticker Service', 'children' => ['Wall Sticker']],
-    ],
-  ],
-  ['title' => 'Fabric Lightbox'],
-  ['title' => 'Standee Signage'],
-];
-
-$productGroups = [
-  [
-    'id' => '3d-box-up-lettering',
-    'title' => '3D Box Up Lettering',
-    'items' => [
-      ['title' => 'HIPPO LAUNDRY 3D Lettering Signboard', 'category' => '3D Box Up Lettering', 'icon' => 'fa-font'],
-      ['title' => '3D Box up Lettering Back-lit', 'category' => 'Back-Lit Signboard', 'icon' => 'fa-lightbulb'],
-      ['title' => 'Acrylic 3D Lettering and Diecut Black Sticker', 'category' => 'Acrylic Lettering', 'icon' => 'fa-cut'],
-      ['title' => '3D Stainless Steel Lettering', 'category' => 'Stainless Steel', 'icon' => 'fa-industry'],
-    ],
-  ],
-  [
-    'id' => 'signboard',
-    'title' => 'Signboard',
-    'items' => [
-      ['title' => 'Day or Night, Make Your Brand Shine!', 'category' => '3D Lighting Signboard', 'icon' => 'fa-store'],
-      ['title' => 'Aluminum Strip with 3D Box-Up Frontlit', 'category' => 'Front-Lit Signboard', 'icon' => 'fa-sign'],
-      ['title' => 'Fabric lightbox double sided', 'category' => 'Lightbox', 'icon' => 'fa-border-style'],
-      ['title' => '3D Lettering Signboard', 'category' => 'Normal Signboard', 'icon' => 'fa-store-alt'],
-    ],
-  ],
-  [
-    'id' => 'signage-printing',
-    'title' => 'Signage & Printing',
-    'items' => [
-      ['title' => 'Billboard and construction Board at Site', 'category' => 'Billboard & Hoarding', 'icon' => 'fa-map-signs'],
-      ['title' => 'Banner Billboard', 'category' => 'Printing', 'icon' => 'fa-print'],
-      ['title' => 'Wall Sticker', 'category' => 'Sticker Service', 'icon' => 'fa-sticky-note'],
-      ['title' => 'Sticker Services', 'category' => 'Wall Sticker', 'icon' => 'fa-layer-group'],
-    ],
-  ],
-];
-
 function productSlug(string $value): string
 {
-  return trim(strtolower(preg_replace('/[^a-z0-9]+/i', '-', $value)), '-');
+  return catalog_slug($value);
 }
 
+$catalog = catalog_load();
+$categoryMap = catalog_category_map($catalog);
+$categoryTree = catalog_build_category_tree($catalog);
 $products = [];
-foreach ($productGroups as $group) {
-  foreach ($group['items'] as $item) {
-    $item['groupTitle'] = $group['title'];
-    $item['id'] = productSlug($item['title']);
-    $item['image'] = 'assets/signboardkl-hero.png';
-    $item['summary'] = 'Custom-made signage and display work by A&T Media, ready for enquiry, site measurement, artwork discussion, and production planning.';
-    $products[] = $item;
-  }
+foreach ($catalog['products'] as $item) {
+  $item['id'] = $item['id'] ?? productSlug($item['title'] ?? 'product');
+  $item['image'] = $item['image'] ?: CATALOG_DEFAULT_IMAGE;
+  $item['summary'] = $item['description'] ?? '';
+  $item['category'] = catalog_category_title($categoryMap, $item['category_id'] ?? '');
+  $item['icon'] = $item['icon'] ?: 'fa-sign';
+  $products[] = $item;
 }
 
 $totalProducts = count($products);
@@ -101,14 +36,14 @@ function renderCategoryTree(array $items, int $level = 0): void
 {
   echo '<ul class="category-level category-level-' . $level . '">';
   foreach ($items as $item) {
-    $title = is_array($item) ? $item['title'] : $item;
+    $title = $item['title'];
     $anchor = productSlug($title);
     echo '<li>';
     echo '<a href="#' . htmlspecialchars($anchor, ENT_QUOTES, 'UTF-8') . '">';
     echo '<i class="fas fa-angle-right" aria-hidden="true"></i>';
     echo '<span>' . htmlspecialchars($title, ENT_QUOTES, 'UTF-8') . '</span>';
     echo '</a>';
-    if (is_array($item) && !empty($item['children'])) {
+    if (!empty($item['children'])) {
       renderCategoryTree($item['children'], $level + 1);
     }
     echo '</li>';

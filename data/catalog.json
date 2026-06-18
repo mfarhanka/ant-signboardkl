@@ -1,0 +1,510 @@
+{
+    "categories": [
+        {
+            "id": "3d-box-up-lettering",
+            "title": "3D Box Up Lettering",
+            "parent_id": null,
+            "seo_title": "",
+            "seo_keywords": "",
+            "meta_description": "",
+            "sort_order": 1
+        },
+        {
+            "id": "acrylic-lettering",
+            "title": "Acrylic Lettering",
+            "parent_id": "3d-box-up-lettering",
+            "seo_title": "",
+            "seo_keywords": "",
+            "meta_description": "",
+            "sort_order": 2
+        },
+        {
+            "id": "aluminium-acrylic",
+            "title": "Aluminium / Acrylic",
+            "parent_id": "3d-box-up-lettering",
+            "seo_title": "",
+            "seo_keywords": "",
+            "meta_description": "",
+            "sort_order": 3
+        },
+        {
+            "id": "aluminium-lettering",
+            "title": "Aluminium Lettering",
+            "parent_id": "3d-box-up-lettering",
+            "seo_title": "",
+            "seo_keywords": "",
+            "meta_description": "",
+            "sort_order": 4
+        },
+        {
+            "id": "stainless-steel",
+            "title": "Stainless Steel",
+            "parent_id": "3d-box-up-lettering",
+            "seo_title": "",
+            "seo_keywords": "",
+            "meta_description": "",
+            "sort_order": 5
+        },
+        {
+            "id": "signboard",
+            "title": "Signboard",
+            "parent_id": null,
+            "seo_title": "",
+            "seo_keywords": "",
+            "meta_description": "",
+            "sort_order": 6
+        },
+        {
+            "id": "3d-lighting-signboard",
+            "title": "3D Lighting Signboard",
+            "parent_id": "signboard",
+            "seo_title": "",
+            "seo_keywords": "",
+            "meta_description": "",
+            "sort_order": 7
+        },
+        {
+            "id": "back-lit-signboard",
+            "title": "Back-Lit Signboard",
+            "parent_id": "3d-lighting-signboard",
+            "seo_title": "",
+            "seo_keywords": "",
+            "meta_description": "",
+            "sort_order": 8
+        },
+        {
+            "id": "front-lit-signboard",
+            "title": "Front-Lit Signboard",
+            "parent_id": "3d-lighting-signboard",
+            "seo_title": "",
+            "seo_keywords": "",
+            "meta_description": "",
+            "sort_order": 9
+        },
+        {
+            "id": "3d-non-lighting-signboard",
+            "title": "3D Non-Lighting Signboard",
+            "parent_id": "signboard",
+            "seo_title": "",
+            "seo_keywords": "",
+            "meta_description": "",
+            "sort_order": 10
+        },
+        {
+            "id": "aluminium-box-up",
+            "title": "Aluminium Box Up",
+            "parent_id": "3d-non-lighting-signboard",
+            "seo_title": "",
+            "seo_keywords": "",
+            "meta_description": "",
+            "sort_order": 11
+        },
+        {
+            "id": "pvc-foamboard-3d-wording",
+            "title": "PVC Foamboard 3D Wording",
+            "parent_id": "3d-non-lighting-signboard",
+            "seo_title": "",
+            "seo_keywords": "",
+            "meta_description": "",
+            "sort_order": 12
+        },
+        {
+            "id": "stainless-steel-box-up",
+            "title": "Stainless Steel Box Up",
+            "parent_id": "3d-non-lighting-signboard",
+            "seo_title": "",
+            "seo_keywords": "",
+            "meta_description": "",
+            "sort_order": 13
+        },
+        {
+            "id": "lightbox",
+            "title": "Lightbox",
+            "parent_id": "signboard",
+            "seo_title": "",
+            "seo_keywords": "",
+            "meta_description": "",
+            "sort_order": 14
+        },
+        {
+            "id": "soft-fabric-lightbox",
+            "title": "Soft Fabric Lightbox",
+            "parent_id": "lightbox",
+            "seo_title": "",
+            "seo_keywords": "",
+            "meta_description": "",
+            "sort_order": 15
+        },
+        {
+            "id": "normal-signboard",
+            "title": "Normal Signboard",
+            "parent_id": "signboard",
+            "seo_title": "",
+            "seo_keywords": "",
+            "meta_description": "",
+            "sort_order": 16
+        },
+        {
+            "id": "aluminium-strip-signboard-base",
+            "title": "Aluminium Strip Signboard Base",
+            "parent_id": "normal-signboard",
+            "seo_title": "",
+            "seo_keywords": "",
+            "meta_description": "",
+            "sort_order": 17
+        },
+        {
+            "id": "signage",
+            "title": "Signage",
+            "parent_id": null,
+            "seo_title": "",
+            "seo_keywords": "",
+            "meta_description": "",
+            "sort_order": 18
+        },
+        {
+            "id": "billboard-hoarding",
+            "title": "Billboard & Hoarding",
+            "parent_id": "signage",
+            "seo_title": "",
+            "seo_keywords": "",
+            "meta_description": "",
+            "sort_order": 19
+        },
+        {
+            "id": "construction-board",
+            "title": "Construction Board",
+            "parent_id": "billboard-hoarding",
+            "seo_title": "",
+            "seo_keywords": "",
+            "meta_description": "",
+            "sort_order": 20
+        },
+        {
+            "id": "indoor-signage",
+            "title": "Indoor Signage",
+            "parent_id": "signage",
+            "seo_title": "",
+            "seo_keywords": "",
+            "meta_description": "",
+            "sort_order": 21
+        },
+        {
+            "id": "acrylic-3d-signage",
+            "title": "Acrylic 3D Signage",
+            "parent_id": "indoor-signage",
+            "seo_title": "",
+            "seo_keywords": "",
+            "meta_description": "",
+            "sort_order": 22
+        },
+        {
+            "id": "acrylic-signage",
+            "title": "Acrylic Signage",
+            "parent_id": "indoor-signage",
+            "seo_title": "",
+            "seo_keywords": "",
+            "meta_description": "",
+            "sort_order": 23
+        },
+        {
+            "id": "foamboard",
+            "title": "Foamboard",
+            "parent_id": "indoor-signage",
+            "seo_title": "",
+            "seo_keywords": "",
+            "meta_description": "",
+            "sort_order": 24
+        },
+        {
+            "id": "stainless-steel-signage",
+            "title": "Stainless Steel Signage",
+            "parent_id": "indoor-signage",
+            "seo_title": "",
+            "seo_keywords": "",
+            "meta_description": "",
+            "sort_order": 25
+        },
+        {
+            "id": "led-banner-display-neon",
+            "title": "LED Banner / Display / Neon",
+            "parent_id": "signage",
+            "seo_title": "",
+            "seo_keywords": "",
+            "meta_description": "",
+            "sort_order": 26
+        },
+        {
+            "id": "pylon-directional-signage",
+            "title": "Pylon & Directional Signage",
+            "parent_id": "signage",
+            "seo_title": "",
+            "seo_keywords": "",
+            "meta_description": "",
+            "sort_order": 27
+        },
+        {
+            "id": "road-sign",
+            "title": "Road Sign",
+            "parent_id": "signage",
+            "seo_title": "",
+            "seo_keywords": "",
+            "meta_description": "",
+            "sort_order": 28
+        },
+        {
+            "id": "jkr-roadsign",
+            "title": "JKR Roadsign",
+            "parent_id": "road-sign",
+            "seo_title": "",
+            "seo_keywords": "",
+            "meta_description": "",
+            "sort_order": 29
+        },
+        {
+            "id": "normal-roadsign",
+            "title": "Normal Roadsign",
+            "parent_id": "road-sign",
+            "seo_title": "",
+            "seo_keywords": "",
+            "meta_description": "",
+            "sort_order": 30
+        },
+        {
+            "id": "printing",
+            "title": "Printing",
+            "parent_id": null,
+            "seo_title": "",
+            "seo_keywords": "",
+            "meta_description": "",
+            "sort_order": 31
+        },
+        {
+            "id": "display-set",
+            "title": "Display Set",
+            "parent_id": "printing",
+            "seo_title": "",
+            "seo_keywords": "",
+            "meta_description": "",
+            "sort_order": 32
+        },
+        {
+            "id": "wood-easel-stand",
+            "title": "Wood Easel Stand",
+            "parent_id": "display-set",
+            "seo_title": "",
+            "seo_keywords": "",
+            "meta_description": "",
+            "sort_order": 33
+        },
+        {
+            "id": "exhibition-booth",
+            "title": "Exhibition Booth",
+            "parent_id": "printing",
+            "seo_title": "",
+            "seo_keywords": "",
+            "meta_description": "",
+            "sort_order": 34
+        },
+        {
+            "id": "backdrop-display-set",
+            "title": "Backdrop Display Set",
+            "parent_id": "exhibition-booth",
+            "seo_title": "",
+            "seo_keywords": "",
+            "meta_description": "",
+            "sort_order": 35
+        },
+        {
+            "id": "normal-roll-up-bunting",
+            "title": "Normal Roll Up Bunting",
+            "parent_id": "exhibition-booth",
+            "seo_title": "",
+            "seo_keywords": "",
+            "meta_description": "",
+            "sort_order": 36
+        },
+        {
+            "id": "sticker-service",
+            "title": "Sticker Service",
+            "parent_id": "printing",
+            "seo_title": "",
+            "seo_keywords": "",
+            "meta_description": "",
+            "sort_order": 37
+        },
+        {
+            "id": "wall-sticker",
+            "title": "Wall Sticker",
+            "parent_id": "sticker-service",
+            "seo_title": "",
+            "seo_keywords": "",
+            "meta_description": "",
+            "sort_order": 38
+        },
+        {
+            "id": "fabric-lightbox",
+            "title": "Fabric Lightbox",
+            "parent_id": null,
+            "seo_title": "",
+            "seo_keywords": "",
+            "meta_description": "",
+            "sort_order": 39
+        },
+        {
+            "id": "standee-signage",
+            "title": "Standee Signage",
+            "parent_id": null,
+            "seo_title": "",
+            "seo_keywords": "",
+            "meta_description": "",
+            "sort_order": 40
+        }
+    ],
+    "products": [
+        {
+            "id": "hippo-laundry-3d-lettering-signboard",
+            "title": "HIPPO LAUNDRY 3D Lettering Signboard",
+            "description": "Custom-made signage and display work by A&T Media, ready for enquiry, site measurement, artwork discussion, and production planning.",
+            "category_id": "3d-box-up-lettering",
+            "image": "assets/signboardkl-hero.png",
+            "icon": "fa-font",
+            "seo_title": "",
+            "seo_keywords": "",
+            "meta_description": "",
+            "sort_order": 1
+        },
+        {
+            "id": "3d-box-up-lettering-back-lit",
+            "title": "3D Box up Lettering Back-lit",
+            "description": "Custom-made signage and display work by A&T Media, ready for enquiry, site measurement, artwork discussion, and production planning.",
+            "category_id": "back-lit-signboard",
+            "image": "assets/signboardkl-hero.png",
+            "icon": "fa-lightbulb",
+            "seo_title": "",
+            "seo_keywords": "",
+            "meta_description": "",
+            "sort_order": 2
+        },
+        {
+            "id": "acrylic-3d-lettering-and-diecut-black-sticker",
+            "title": "Acrylic 3D Lettering and Diecut Black Sticker",
+            "description": "Custom-made signage and display work by A&T Media, ready for enquiry, site measurement, artwork discussion, and production planning.",
+            "category_id": "acrylic-lettering",
+            "image": "assets/signboardkl-hero.png",
+            "icon": "fa-cut",
+            "seo_title": "",
+            "seo_keywords": "",
+            "meta_description": "",
+            "sort_order": 3
+        },
+        {
+            "id": "3d-stainless-steel-lettering",
+            "title": "3D Stainless Steel Lettering",
+            "description": "Custom-made signage and display work by A&T Media, ready for enquiry, site measurement, artwork discussion, and production planning.",
+            "category_id": "stainless-steel",
+            "image": "assets/signboardkl-hero.png",
+            "icon": "fa-industry",
+            "seo_title": "",
+            "seo_keywords": "",
+            "meta_description": "",
+            "sort_order": 4
+        },
+        {
+            "id": "day-or-night-make-your-brand-shine",
+            "title": "Day or Night, Make Your Brand Shine!",
+            "description": "Custom-made signage and display work by A&T Media, ready for enquiry, site measurement, artwork discussion, and production planning.",
+            "category_id": "3d-lighting-signboard",
+            "image": "assets/signboardkl-hero.png",
+            "icon": "fa-store",
+            "seo_title": "",
+            "seo_keywords": "",
+            "meta_description": "",
+            "sort_order": 5
+        },
+        {
+            "id": "aluminum-strip-with-3d-box-up-frontlit",
+            "title": "Aluminum Strip with 3D Box-Up Frontlit",
+            "description": "Custom-made signage and display work by A&T Media, ready for enquiry, site measurement, artwork discussion, and production planning.",
+            "category_id": "front-lit-signboard",
+            "image": "assets/signboardkl-hero.png",
+            "icon": "fa-sign",
+            "seo_title": "",
+            "seo_keywords": "",
+            "meta_description": "",
+            "sort_order": 6
+        },
+        {
+            "id": "fabric-lightbox-double-sided",
+            "title": "Fabric lightbox double sided",
+            "description": "Custom-made signage and display work by A&T Media, ready for enquiry, site measurement, artwork discussion, and production planning.",
+            "category_id": "lightbox",
+            "image": "assets/signboardkl-hero.png",
+            "icon": "fa-border-style",
+            "seo_title": "",
+            "seo_keywords": "",
+            "meta_description": "",
+            "sort_order": 7
+        },
+        {
+            "id": "3d-lettering-signboard",
+            "title": "3D Lettering Signboard",
+            "description": "Custom-made signage and display work by A&T Media, ready for enquiry, site measurement, artwork discussion, and production planning.",
+            "category_id": "normal-signboard",
+            "image": "assets/signboardkl-hero.png",
+            "icon": "fa-store-alt",
+            "seo_title": "",
+            "seo_keywords": "",
+            "meta_description": "",
+            "sort_order": 8
+        },
+        {
+            "id": "billboard-and-construction-board-at-site",
+            "title": "Billboard and construction Board at Site",
+            "description": "Custom-made signage and display work by A&T Media, ready for enquiry, site measurement, artwork discussion, and production planning.",
+            "category_id": "billboard-hoarding",
+            "image": "assets/signboardkl-hero.png",
+            "icon": "fa-map-signs",
+            "seo_title": "",
+            "seo_keywords": "",
+            "meta_description": "",
+            "sort_order": 9
+        },
+        {
+            "id": "banner-billboard",
+            "title": "Banner Billboard",
+            "description": "Custom-made signage and display work by A&T Media, ready for enquiry, site measurement, artwork discussion, and production planning.",
+            "category_id": "printing",
+            "image": "assets/signboardkl-hero.png",
+            "icon": "fa-print",
+            "seo_title": "",
+            "seo_keywords": "",
+            "meta_description": "",
+            "sort_order": 10
+        },
+        {
+            "id": "wall-sticker",
+            "title": "Wall Sticker",
+            "description": "Custom-made signage and display work by A&T Media, ready for enquiry, site measurement, artwork discussion, and production planning.",
+            "category_id": "sticker-service",
+            "image": "assets/signboardkl-hero.png",
+            "icon": "fa-sticky-note",
+            "seo_title": "",
+            "seo_keywords": "",
+            "meta_description": "",
+            "sort_order": 11
+        },
+        {
+            "id": "sticker-services",
+            "title": "Sticker Services",
+            "description": "Custom-made signage and display work by A&T Media, ready for enquiry, site measurement, artwork discussion, and production planning.",
+            "category_id": "wall-sticker",
+            "image": "assets/signboardkl-hero.png",
+            "icon": "fa-layer-group",
+            "seo_title": "",
+            "seo_keywords": "",
+            "meta_description": "",
+            "sort_order": 12
+        }
+    ]
+}
