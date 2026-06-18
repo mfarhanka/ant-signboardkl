@@ -1,7 +1,7 @@
 <?php
 $siteName = 'A&T Media Sdn. Bhd.';
 $siteTitle = 'A&T Media Sdn. Bhd. | Signboard, Signage & Printing KL';
-$siteDescription = 'A&T Media Sdn. Bhd. provides one-stop signboard, signage, printing, design, production, and installation services in Malaysia.';
+$siteDescription = 'A&T Media Sdn. Bhd. provides one-stop signboard, signage, printing, design, production, and installation services in Kuala Lumpur (KL), Klang Valley, Selangor, and Seremban.';
 $siteKeywords = 'signboard Kuala Lumpur, signage KL, signage Klang Valley, signage Selangor, signage Seremban, 3D lettering, lightbox signage, billboard signage';
 $sitePhone = '+60 16-701 3295';
 $siteEmail = 'antadv.rei@gmail.com';
@@ -1344,7 +1344,7 @@ $reviewSlides = array_chunk($googleReviews, 3);
       <div class="container">
         <div class="footer-brand">A&amp;T Media Sdn. Bhd.</div>
         <div class="footer-tagline">Trusted Signboard Supplier in Kuala Lumpur Since 2022</div>
-        <div class="footer-group">Part of ANT Group Malaysia</div>
+        <div class="footer-group">Part of ANT Group</div>
         <div class="footer-copyright mt-3">Copyright &copy; 2026 A&amp;T Media Sdn. Bhd. 202501057902 (1659308-W) All rights reserved.</div>
       </div>
     </footer>

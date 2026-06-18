@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A&T Media Sdn. Bhd. provides one-stop signboard, signage, printing, design, production, and installation services in Malaysia.">
+    <meta name="description" content="A&T Media Sdn. Bhd. provides one-stop signboard, signage, printing, design, production, and installation services in Kuala Lumpur (KL), Klang Valley, Selangor, and Seremban.">
     <title>A&T Media Sdn. Bhd. | Signboard, Signage & Printing KL</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>

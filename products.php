@@ -1,111 +1,120 @@
 <?php
 $siteName = 'A&T Media Sdn. Bhd.';
 $siteTitle = 'Products | A&T Media Sdn. Bhd. Signboard, Signage & Printing KL';
-$siteDescription = 'Explore A&T Media products including 3D box up lettering, signboard, signage, printing, fabric lightbox, and standee signage solutions in Malaysia.';
+$siteDescription = 'Explore A&T Media products including 3D box up lettering, signboard, signage, printing, fabric lightbox, and standee signage solutions for Kuala Lumpur (KL), Klang Valley, Selangor, and Seremban.';
 $siteKeywords = 'products signboard Kuala Lumpur, products signboard KL, 3D box up lettering, fabric lightbox, standee signage, signage products Klang Valley';
 $siteUrl = 'http://signboardkl.com.my';
 $canonicalUrl = rtrim($siteUrl, '/') . '/products.php';
 $ogImage = rtrim($siteUrl, '/') . '/assets/signboardkl-hero.png';
 $logoImage = rtrim($siteUrl, '/') . '/assets/ant-signage-logo.png';
 
-$productGroups = [
+$whatsAppUrl = 'https://wa.me/60167013295';
+
+$categoryTree = [
   [
-    'id' => 'core-signage',
-    'title' => 'Core Signage Systems',
-    'description' => 'Main brand visibility products for shopfronts, building fascia, directional needs, and permanent site signage.',
-    'items' => [
-      [
-        'id' => 'box-up-lettering',
-        'title' => '3D Box Up Lettering',
-        'icon' => 'fa-font',
-        'summary' => 'Dimensional lettering for storefronts, offices, and branded environments that need stronger presence and premium finishing.',
-        'details' => [
-          'Built for facade branding, reception signs, and premium commercial frontage.',
-          'Material options include acrylic, aluminium, and stainless steel combinations.',
-          'Suitable for illuminated and non-illuminated brand applications.',
-        ],
-        'tags' => ['Acrylic Lettering', 'Aluminium / Acrylic', 'Aluminium Lettering', 'Stainless Steel'],
-      ],
-      [
-        'id' => 'signboard',
-        'title' => 'Signboard',
-        'icon' => 'fa-store',
-        'summary' => 'Custom signboard solutions for shops, commercial units, construction sites, and business frontage.',
-        'details' => [
-          'Designed for strong street visibility and brand recognition.',
-          'Front-lit, back-lit, and lightbox formats available based on site requirements.',
-          'Supports fabrication, installation, and finishing coordination.',
-        ],
-        'tags' => ['3D Lighting', 'Back-Lit', 'Front-Lit', 'Lightbox', 'Aluminium Strip Base'],
-      ],
-      [
-        'id' => 'signage',
-        'title' => 'Signage',
-        'icon' => 'fa-lightbulb',
-        'summary' => 'Indoor and outdoor signage designed for clear brand visibility, direction, promotion, and display.',
-        'details' => [
-          'Suitable for wayfinding, directional systems, site boards, and branded displays.',
-          'Covers retail, office, construction, and promotional environments.',
-          'Can be produced for permanent installation or campaign-based usage.',
-        ],
-        'tags' => ['Billboard & Hoarding', 'Indoor Signage', 'LED Display', 'Pylon & Directional', 'Road Sign'],
-      ],
+    'title' => '3D Box Up Lettering',
+    'children' => ['Acrylic Lettering', 'Aluminium / Acrylic', 'Aluminium Lettering', 'Stainless Steel'],
+  ],
+  [
+    'title' => 'Signboard',
+    'children' => [
+      ['title' => '3D Lighting Signboard', 'children' => ['Back-Lit Signboard', 'Front-Lit Signboard']],
+      ['title' => '3D Non-Lighting Signboard', 'children' => ['Aluminium Box Up', 'PVC Foamboard 3D Wording', 'Stainless Steel Box Up']],
+      ['title' => 'Lightbox', 'children' => ['Soft Fabric Lightbox']],
+      ['title' => 'Normal Signboard', 'children' => ['Aluminium Strip Signboard Base']],
     ],
   ],
   [
-    'id' => 'display-print',
-    'title' => 'Display & Print Solutions',
-    'description' => 'Flexible campaign, retail, event, and illuminated display products that can expand easily as new formats are added.',
+    'title' => 'Signage',
+    'children' => [
+      ['title' => 'Billboard & Hoarding', 'children' => ['Construction Board']],
+      ['title' => 'Indoor Signage', 'children' => ['Acrylic 3D Signage', 'Acrylic Signage', 'Foamboard', 'Stainless Steel Signage']],
+      'LED Banner / Display / Neon',
+      'Pylon & Directional Signage',
+      ['title' => 'Road Sign', 'children' => ['JKR Roadsign', 'Normal Roadsign']],
+    ],
+  ],
+  [
+    'title' => 'Printing',
+    'children' => [
+      ['title' => 'Display Set', 'children' => ['Wood Easel Stand']],
+      ['title' => 'Exhibition Booth', 'children' => ['Backdrop Display Set', 'Normal Roll Up Bunting']],
+      ['title' => 'Sticker Service', 'children' => ['Wall Sticker']],
+    ],
+  ],
+  ['title' => 'Fabric Lightbox'],
+  ['title' => 'Standee Signage'],
+];
+
+$productGroups = [
+  [
+    'id' => '3d-box-up-lettering',
+    'title' => '3D Box Up Lettering',
     'items' => [
-      [
-        'id' => 'printing',
-        'title' => 'Printing',
-        'icon' => 'fa-print',
-        'summary' => 'Commercial printing support for promotional displays, banners, decals, and business graphics.',
-        'details' => [
-          'Ideal for product launches, events, business promotions, and retail campaigns.',
-          'Supports indoor and outdoor print applications with practical finishing choices.',
-          'Works alongside signboard and signage projects for one-stop brand rollout.',
-        ],
-        'tags' => ['Display Set', 'Wood Easel Stand', 'Exhibition Booth', 'Backdrop Display', 'Sticker Service'],
-      ],
-      [
-        'id' => 'fabric-lightbox',
-        'title' => 'Fabric Lightbox',
-        'icon' => 'fa-tools',
-        'summary' => 'Clean illuminated display systems for retail, exhibition, showroom, and high-visibility brand spaces.',
-        'details' => [
-          'Creates even lighting with clean graphic presentation for premium environments.',
-          'Useful for showrooms, pop-up spaces, exhibitions, and retail display walls.',
-          'Available in soft fabric and double-sided formats.',
-        ],
-        'tags' => ['Soft Fabric Lightbox', 'Double Sided', 'Retail Display'],
-      ],
-      [
-        'id' => 'standee-signage',
-        'title' => 'Standee Signage',
-        'icon' => 'fa-ruler-combined',
-        'summary' => 'Portable display signage for events, retail floors, campaigns, wayfinding, and product promotions.',
-        'details' => [
-          'Fast to deploy for campaigns, events, and temporary promotional messaging.',
-          'Well suited for indoor activations, counters, and product awareness points.',
-          'Can be paired with printed graphics and other branded display materials.',
-        ],
-        'tags' => ['Roll Up Bunting', 'Campaign Display', 'Floor Standee'],
-      ],
+      ['title' => 'HIPPO LAUNDRY 3D Lettering Signboard', 'category' => '3D Box Up Lettering', 'icon' => 'fa-font'],
+      ['title' => '3D Box up Lettering Back-lit', 'category' => 'Back-Lit Signboard', 'icon' => 'fa-lightbulb'],
+      ['title' => 'Acrylic 3D Lettering and Diecut Black Sticker', 'category' => 'Acrylic Lettering', 'icon' => 'fa-cut'],
+      ['title' => '3D Stainless Steel Lettering', 'category' => 'Stainless Steel', 'icon' => 'fa-industry'],
+    ],
+  ],
+  [
+    'id' => 'signboard',
+    'title' => 'Signboard',
+    'items' => [
+      ['title' => 'Day or Night, Make Your Brand Shine!', 'category' => '3D Lighting Signboard', 'icon' => 'fa-store'],
+      ['title' => 'Aluminum Strip with 3D Box-Up Frontlit', 'category' => 'Front-Lit Signboard', 'icon' => 'fa-sign'],
+      ['title' => 'Fabric lightbox double sided', 'category' => 'Lightbox', 'icon' => 'fa-border-style'],
+      ['title' => '3D Lettering Signboard', 'category' => 'Normal Signboard', 'icon' => 'fa-store-alt'],
+    ],
+  ],
+  [
+    'id' => 'signage-printing',
+    'title' => 'Signage & Printing',
+    'items' => [
+      ['title' => 'Billboard and construction Board at Site', 'category' => 'Billboard & Hoarding', 'icon' => 'fa-map-signs'],
+      ['title' => 'Banner Billboard', 'category' => 'Printing', 'icon' => 'fa-print'],
+      ['title' => 'Wall Sticker', 'category' => 'Sticker Service', 'icon' => 'fa-sticky-note'],
+      ['title' => 'Sticker Services', 'category' => 'Wall Sticker', 'icon' => 'fa-layer-group'],
     ],
   ],
 ];
+
+function productSlug(string $value): string
+{
+  return trim(strtolower(preg_replace('/[^a-z0-9]+/i', '-', $value)), '-');
+}
 
 $products = [];
 foreach ($productGroups as $group) {
   foreach ($group['items'] as $item) {
     $item['groupTitle'] = $group['title'];
+    $item['id'] = productSlug($item['title']);
+    $item['image'] = 'assets/signboardkl-hero.png';
+    $item['summary'] = 'Custom-made signage and display work by A&T Media, ready for enquiry, site measurement, artwork discussion, and production planning.';
     $products[] = $item;
   }
 }
 
 $totalProducts = count($products);
+
+function renderCategoryTree(array $items, int $level = 0): void
+{
+  echo '<ul class="category-level category-level-' . $level . '">';
+  foreach ($items as $item) {
+    $title = is_array($item) ? $item['title'] : $item;
+    $anchor = productSlug($title);
+    echo '<li>';
+    echo '<a href="#' . htmlspecialchars($anchor, ENT_QUOTES, 'UTF-8') . '">';
+    echo '<i class="fas fa-angle-right" aria-hidden="true"></i>';
+    echo '<span>' . htmlspecialchars($title, ENT_QUOTES, 'UTF-8') . '</span>';
+    echo '</a>';
+    if (is_array($item) && !empty($item['children'])) {
+      renderCategoryTree($item['children'], $level + 1);
+    }
+    echo '</li>';
+  }
+  echo '</ul>';
+}
 
 $structuredData = [
   '@context' => 'https://schema.org',
@@ -160,6 +169,11 @@ $structuredData = [
         --brand-red: #d71920;
         --brand-red-dark: #a91117;
         --ink: #111111;
+        --graphite: #2c2c2c;
+        --muted: #747474;
+        --soft-grey: #f3f4f6;
+        --line: #dddddd;
+      }
 
       .navbar-brand {
         color: var(--ink);
@@ -170,11 +184,6 @@ $structuredData = [
         gap: 12px;
         padding-top: 0.2rem;
         padding-bottom: 0.2rem;
-      }
-        --graphite: #2c2c2c;
-        --muted: #747474;
-        --soft-grey: #f3f4f6;
-        --line: #dddddd;
       }
 
 
@@ -192,19 +201,11 @@ $structuredData = [
         scroll-behavior: smooth;
       }
 
-
-        .navbar-brand {
-          gap: 10px;
-        }
       body {
         color: var(--ink);
         font-family: Arial, Helvetica, sans-serif;
         background: #ffffff;
       }
-
-        .navbar-brand span {
-          font-size: 1rem;
-        }
 
       .navbar {
         border-bottom: 1px solid var(--line);
@@ -531,6 +532,231 @@ $structuredData = [
         color: var(--graphite);
       }
 
+      .page-title {
+        background: #f5f5f5;
+        border-bottom: 1px solid var(--line);
+        padding: 46px 0;
+      }
+
+      .page-title h1 {
+        color: var(--ink);
+        font-size: 2.25rem;
+        font-weight: 850;
+        margin: 0;
+      }
+
+      .breadcrumb-bar {
+        border-bottom: 1px solid var(--line);
+        background: #ffffff;
+        padding: 15px 0;
+      }
+
+      .breadcrumb {
+        background: transparent;
+        border-radius: 0;
+        font-size: 0.92rem;
+        margin: 0;
+        padding: 0;
+      }
+
+      .breadcrumb a {
+        color: var(--muted);
+        font-weight: 700;
+      }
+
+      .breadcrumb-item.active {
+        color: var(--brand-red);
+        font-weight: 800;
+      }
+
+      .catalog-section {
+        padding: 42px 0 72px;
+      }
+
+      .category-panel {
+        position: sticky;
+        top: 92px;
+        border: 1px solid var(--line);
+        background: #ffffff;
+      }
+
+      .category-panel h2 {
+        border-bottom: 1px solid var(--line);
+        color: var(--ink);
+        font-size: 1.1rem;
+        font-weight: 850;
+        margin: 0;
+        padding: 18px 20px;
+      }
+
+      .category-level {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .category-level-0 {
+        padding: 10px 0;
+      }
+
+      .category-level li {
+        margin: 0;
+      }
+
+      .category-level a {
+        align-items: flex-start;
+        color: var(--graphite);
+        display: flex;
+        font-size: 0.94rem;
+        font-weight: 700;
+        gap: 9px;
+        line-height: 1.35;
+        padding: 8px 20px;
+        text-decoration: none;
+      }
+
+      .category-level a:hover {
+        color: var(--brand-red);
+      }
+
+      .category-level i {
+        color: #9a9a9a;
+        font-size: 0.7rem;
+        margin-top: 4px;
+      }
+
+      .category-level-1 a {
+        color: #555555;
+        font-size: 0.9rem;
+        font-weight: 600;
+        padding-left: 34px;
+      }
+
+      .category-level-2 a {
+        color: #6d6d6d;
+        font-size: 0.86rem;
+        font-weight: 500;
+        padding-left: 50px;
+      }
+
+      .catalog-heading {
+        align-items: center;
+        border-bottom: 1px solid var(--line);
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 24px;
+        padding-bottom: 16px;
+      }
+
+      .catalog-heading h2 {
+        font-size: 1.35rem;
+        font-weight: 850;
+        margin: 0;
+      }
+
+      .catalog-total {
+        color: var(--muted);
+        font-size: 0.92rem;
+        font-weight: 700;
+      }
+
+      .product-card {
+        border: 1px solid var(--line);
+        background: #ffffff;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        transition: border-color 160ms ease, transform 160ms ease;
+      }
+
+      .product-card:hover {
+        border-color: rgba(215, 25, 32, 0.45);
+        transform: translateY(-3px);
+      }
+
+      .product-image {
+        aspect-ratio: 4 / 3;
+        background: #111111;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .product-image img {
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.7;
+        width: 100%;
+      }
+
+      .product-image .product-icon {
+        background: rgba(215, 25, 32, 0.92);
+        border-radius: 0;
+        bottom: 0;
+        color: #ffffff;
+        height: 48px;
+        position: absolute;
+        right: 0;
+        width: 48px;
+      }
+
+      .product-card-body {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        padding: 18px;
+      }
+
+      .product-card small {
+        color: var(--brand-red);
+        display: block;
+        font-weight: 800;
+        margin-bottom: 8px;
+      }
+
+      .product-card h3 {
+        color: var(--ink);
+        font-size: 1.03rem;
+        font-weight: 800;
+        line-height: 1.35;
+        margin-bottom: 10px;
+      }
+
+      .product-card p {
+        color: var(--muted);
+        font-size: 0.93rem;
+        line-height: 1.6;
+        margin-bottom: 18px;
+      }
+
+      .product-card .btn {
+        margin-top: auto;
+      }
+
+      .catalog-pagination {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 18px;
+      }
+
+      .catalog-pagination a,
+      .catalog-pagination span {
+        border: 1px solid var(--line);
+        color: var(--graphite);
+        font-weight: 800;
+        min-width: 40px;
+        padding: 9px 12px;
+        text-align: center;
+        text-decoration: none;
+      }
+
+      .catalog-pagination .active,
+      .catalog-pagination a:hover {
+        background: var(--brand-red);
+        border-color: var(--brand-red);
+        color: #ffffff;
+      }
+
       .support-band {
         background: var(--soft-grey);
       }
@@ -599,19 +825,42 @@ $structuredData = [
       }
 
       @media (max-width: 991.98px) {
-        .product-nav {
+        .product-nav,
+        .category-panel {
           position: static;
           margin-bottom: 28px;
         }
       }
 
       @media (max-width: 575.98px) {
+        .navbar-brand {
+          gap: 10px;
+        }
+
+        .navbar-brand span {
+          font-size: 1rem;
+        }
+
         .page-hero-content {
           padding: 72px 0 78px;
         }
 
+        .page-title h1 {
+          font-size: 1.75rem;
+        }
+
         section {
           padding: 56px 0;
+        }
+
+        .catalog-section {
+          padding: 34px 0 56px;
+        }
+
+        .catalog-heading {
+          align-items: flex-start;
+          flex-direction: column;
+          gap: 8px;
         }
 
         .product-section {
@@ -643,91 +892,65 @@ $structuredData = [
       </div>
     </nav>
 
-    <header class="page-hero">
+    <header class="page-title">
       <div class="container">
-        <div class="page-hero-content">
-          <div class="eyebrow">Products</div>
-          <h1>Signboard, signage, printing, and display products for commercial brands.</h1>
-          <p>Browse the core A&T Media product categories and jump straight into the solution type that fits your storefront, campaign, showroom, office, or site requirement.</p>
-          <a class="btn btn-red btn-lg px-4 mt-3" href="#product-list"><i class="fas fa-th-large mr-2"></i>Explore Products</a>
-        </div>
+        <h1>Our Products</h1>
       </div>
     </header>
 
-    <section id="product-list">
+    <div class="breadcrumb-bar">
       <div class="container">
-        <div class="row mb-4">
-          <div class="col-lg-7">
-            <div class="section-kicker">Product categories</div>
-            <h2 class="section-title">A focused product page for the services customers ask for most.</h2>
-          </div>
-          <div class="col-lg-5">
-            <p class="section-copy">Products are now arranged by category, so you can keep adding new items later without changing the page structure. Just place each new product under the right group.</p>
-          </div>
-        </div>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Our Products</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+
+    <section id="product-list" class="catalog-section">
+      <div class="container">
         <div class="row">
           <div class="col-lg-4 col-xl-3">
-            <aside class="product-nav" aria-label="Products navigation">
-              <h2><?php echo $totalProducts; ?> Products</h2>
-              <?php foreach ($productGroups as $group): ?>
-                <div class="product-nav-group">
-                  <div class="product-nav-group-title"><?php echo htmlspecialchars($group['title'], ENT_QUOTES, 'UTF-8'); ?></div>
-                  <ul>
-                    <?php foreach ($group['items'] as $product): ?>
-                      <li>
-                        <a href="#<?php echo htmlspecialchars($product['id'], ENT_QUOTES, 'UTF-8'); ?>">
-                          <i class="fas fa-angle-right" aria-hidden="true"></i>
-                          <span><?php echo htmlspecialchars($product['title'], ENT_QUOTES, 'UTF-8'); ?></span>
-                        </a>
-                      </li>
-                    <?php endforeach; ?>
-                  </ul>
-                </div>
-              <?php endforeach; ?>
+            <aside class="category-panel" aria-label="Product category navigation">
+              <h2>Category</h2>
+              <?php renderCategoryTree($categoryTree); ?>
             </aside>
           </div>
           <div class="col-lg-8 col-xl-9">
-            <div class="row product-overview">
+            <div class="catalog-heading">
+              <h2>Featured Products</h2>
+              <div class="catalog-total"><?php echo $totalProducts; ?> products</div>
+            </div>
+            <div class="row">
               <?php foreach ($products as $product): ?>
-                <div class="col-md-6 mb-4">
-                  <a class="product-overview-card" href="#<?php echo htmlspecialchars($product['id'], ENT_QUOTES, 'UTF-8'); ?>">
-                    <small><?php echo htmlspecialchars($product['groupTitle'], ENT_QUOTES, 'UTF-8'); ?></small>
-                    <h3><?php echo htmlspecialchars($product['title'], ENT_QUOTES, 'UTF-8'); ?></h3>
-                    <p><?php echo htmlspecialchars($product['summary'], ENT_QUOTES, 'UTF-8'); ?></p>
-                  </a>
+                <div class="col-md-6 col-xl-4 mb-4">
+                  <article id="<?php echo htmlspecialchars($product['id'], ENT_QUOTES, 'UTF-8'); ?>" class="product-card">
+                    <div class="product-image">
+                      <img src="<?php echo htmlspecialchars($product['image'], ENT_QUOTES, 'UTF-8'); ?>" alt="<?php echo htmlspecialchars($product['title'], ENT_QUOTES, 'UTF-8'); ?>">
+                      <div class="product-icon"><i class="fas <?php echo htmlspecialchars($product['icon'], ENT_QUOTES, 'UTF-8'); ?>" aria-hidden="true"></i></div>
+                    </div>
+                    <div class="product-card-body">
+                      <small><?php echo htmlspecialchars($product['category'], ENT_QUOTES, 'UTF-8'); ?></small>
+                      <h3><?php echo htmlspecialchars($product['title'], ENT_QUOTES, 'UTF-8'); ?></h3>
+                      <p><?php echo htmlspecialchars($product['summary'], ENT_QUOTES, 'UTF-8'); ?></p>
+                      <a class="btn btn-red btn-sm" href="<?php echo htmlspecialchars($whatsAppUrl, ENT_QUOTES, 'UTF-8'); ?>">
+                        <i class="fab fa-whatsapp mr-1" aria-hidden="true"></i> WhatsApp Us
+                      </a>
+                    </div>
+                  </article>
                 </div>
               <?php endforeach; ?>
             </div>
-            <?php foreach ($productGroups as $group): ?>
-              <section class="product-group" aria-labelledby="<?php echo htmlspecialchars($group['id'], ENT_QUOTES, 'UTF-8'); ?>-title">
-                <div class="product-group-header">
-                  <h3 id="<?php echo htmlspecialchars($group['id'], ENT_QUOTES, 'UTF-8'); ?>-title"><?php echo htmlspecialchars($group['title'], ENT_QUOTES, 'UTF-8'); ?></h3>
-                  <span class="product-count"><?php echo count($group['items']); ?> items</span>
-                  <p><?php echo htmlspecialchars($group['description'], ENT_QUOTES, 'UTF-8'); ?></p>
-                </div>
-                <?php foreach ($group['items'] as $product): ?>
-                  <article id="<?php echo htmlspecialchars($product['id'], ENT_QUOTES, 'UTF-8'); ?>" class="product-section">
-                    <div class="product-head">
-                      <div class="product-icon"><i class="fas <?php echo htmlspecialchars($product['icon'], ENT_QUOTES, 'UTF-8'); ?>" aria-hidden="true"></i></div>
-                      <div>
-                        <h3><?php echo htmlspecialchars($product['title'], ENT_QUOTES, 'UTF-8'); ?></h3>
-                        <p class="mb-0"><?php echo htmlspecialchars($product['summary'], ENT_QUOTES, 'UTF-8'); ?></p>
-                      </div>
-                    </div>
-                    <ul class="product-points">
-                      <?php foreach ($product['details'] as $detail): ?>
-                        <li><i class="fas fa-check-circle" aria-hidden="true"></i><span><?php echo htmlspecialchars($detail, ENT_QUOTES, 'UTF-8'); ?></span></li>
-                      <?php endforeach; ?>
-                    </ul>
-                    <div class="product-tags">
-                      <?php foreach ($product['tags'] as $tag): ?>
-                        <span><?php echo htmlspecialchars($tag, ENT_QUOTES, 'UTF-8'); ?></span>
-                      <?php endforeach; ?>
-                    </div>
-                  </article>
-                <?php endforeach; ?>
-              </section>
-            <?php endforeach; ?>
+            <nav class="catalog-pagination" aria-label="Product pages">
+              <span class="active">1</span>
+              <a href="#product-list">2</a>
+              <a href="#product-list">3</a>
+              <a href="#product-list">4</a>
+              <a href="#product-list">5</a>
+              <a href="#product-list">Next</a>
+            </nav>
           </div>
         </div>
       </div>
@@ -797,7 +1020,7 @@ $structuredData = [
       <div class="container">
         <div class="footer-brand">A&amp;T Media Sdn. Bhd.</div>
         <div class="footer-tagline">Trusted Signboard Supplier in Kuala Lumpur Since 2022</div>
-        <div class="footer-group">Part of ANT Group Malaysia</div>
+        <div class="footer-group">Part of ANT Group</div>
         <div class="footer-copyright mt-3">Copyright &copy; 2026 A&amp;T Media Sdn. Bhd. 202501057902 (1659308-W) All rights reserved.</div>
       </div>
     </footer>
