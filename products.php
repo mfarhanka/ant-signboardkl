@@ -20,6 +20,10 @@ function productSlug(string $value): string
 $catalog = catalog_load();
 $categoryMap = catalog_category_map($catalog);
 $categoryTree = catalog_build_category_tree($catalog);
+$selectedCategoryId = (string) ($_GET['cat'] ?? '');
+$selectedCategory = $categoryMap[$selectedCategoryId] ?? null;
+$currentPage = max(1, (int) ($_GET['page'] ?? 1));
+$perPage = 12;
 $products = [];
 foreach ($catalog['products'] as $item) {
   $item['id'] = $item['id'] ?? productSlug($item['title'] ?? 'product');
@@ -30,21 +34,57 @@ foreach ($catalog['products'] as $item) {
   $products[] = $item;
 }
 
-$totalProducts = count($products);
+function categoryDescendantIds(array $catalog, string $categoryId): array
+{
+  $ids = [$categoryId];
+  foreach ($catalog['categories'] as $category) {
+    if (($category['parent_id'] ?? null) === $categoryId) {
+      $ids = array_merge($ids, categoryDescendantIds($catalog, $category['id']));
+    }
+  }
+  return $ids;
+}
 
-function renderCategoryTree(array $items, int $level = 0): void
+if ($selectedCategory) {
+  $visibleCategoryIds = categoryDescendantIds($catalog, $selectedCategoryId);
+  $products = array_values(array_filter($products, static function ($product) use ($visibleCategoryIds): bool {
+    return in_array($product['category_id'] ?? '', $visibleCategoryIds, true);
+  }));
+}
+
+$totalProducts = count($products);
+$totalPages = max(1, (int) ceil($totalProducts / $perPage));
+$currentPage = min($currentPage, $totalPages);
+$productsPage = array_slice($products, ($currentPage - 1) * $perPage, $perPage);
+$catalogHeading = $selectedCategory ? $selectedCategory['title'] : 'Featured Products';
+
+function productListUrl(?string $categoryId = null, int $page = 1): string
+{
+  $params = [];
+  if ($categoryId) {
+    $params['cat'] = $categoryId;
+  }
+  if ($page > 1) {
+    $params['page'] = $page;
+  }
+  $query = $params ? '?' . http_build_query($params) : '';
+  return 'products.php' . $query . '#product-list';
+}
+
+function renderCategoryTree(array $items, ?string $selectedCategoryId, int $level = 0): void
 {
   echo '<ul class="category-level category-level-' . $level . '">';
   foreach ($items as $item) {
     $title = $item['title'];
-    $anchor = productSlug($title);
+    $id = $item['id'];
+    $activeClass = $selectedCategoryId === $id ? ' class="active"' : '';
     echo '<li>';
-    echo '<a href="#' . htmlspecialchars($anchor, ENT_QUOTES, 'UTF-8') . '">';
+    echo '<a' . $activeClass . ' href="' . htmlspecialchars(productListUrl($id), ENT_QUOTES, 'UTF-8') . '">';
     echo '<i class="fas fa-angle-right" aria-hidden="true"></i>';
     echo '<span>' . htmlspecialchars($title, ENT_QUOTES, 'UTF-8') . '</span>';
     echo '</a>';
     if (!empty($item['children'])) {
-      renderCategoryTree($item['children'], $level + 1);
+      renderCategoryTree($item['children'], $selectedCategoryId, $level + 1);
     }
     echo '</li>';
   }
@@ -554,6 +594,11 @@ $structuredData = [
         color: var(--brand-red);
       }
 
+      .category-level a.active {
+        color: var(--brand-red);
+        font-weight: 850;
+      }
+
       .category-level i {
         color: #9a9a9a;
         font-size: 0.7rem;
@@ -863,16 +908,31 @@ $structuredData = [
           <div class="col-lg-4 col-xl-3">
             <aside class="category-panel" aria-label="Product category navigation">
               <h2>Category</h2>
-              <?php renderCategoryTree($categoryTree); ?>
+              <ul class="category-level category-level-0">
+                <li>
+                  <a<?php echo $selectedCategory ? '' : ' class="active"'; ?> href="<?php echo htmlspecialchars(productListUrl(null), ENT_QUOTES, 'UTF-8'); ?>">
+                    <i class="fas fa-angle-right" aria-hidden="true"></i>
+                    <span>All Products</span>
+                  </a>
+                </li>
+              </ul>
+              <?php renderCategoryTree($categoryTree, $selectedCategoryId); ?>
             </aside>
           </div>
           <div class="col-lg-8 col-xl-9">
             <div class="catalog-heading">
-              <h2>Featured Products</h2>
-              <div class="catalog-total"><?php echo $totalProducts; ?> products</div>
+              <h2><?php echo htmlspecialchars($catalogHeading, ENT_QUOTES, 'UTF-8'); ?></h2>
+              <div class="catalog-total">
+                <?php echo $totalProducts; ?> products<?php echo $totalPages > 1 ? ' · Page ' . $currentPage . ' of ' . $totalPages : ''; ?>
+              </div>
             </div>
             <div class="row">
-              <?php foreach ($products as $product): ?>
+              <?php if (!$productsPage): ?>
+                <div class="col-12">
+                  <div class="alert alert-light border">No products found in this category.</div>
+                </div>
+              <?php endif; ?>
+              <?php foreach ($productsPage as $product): ?>
                 <div class="col-md-6 col-xl-4 mb-4">
                   <article id="<?php echo htmlspecialchars($product['id'], ENT_QUOTES, 'UTF-8'); ?>" class="product-card">
                     <a class="product-detail-link" href="product.php?id=<?php echo rawurlencode($product['id']); ?>">
@@ -895,14 +955,23 @@ $structuredData = [
                 </div>
               <?php endforeach; ?>
             </div>
-            <nav class="catalog-pagination" aria-label="Product pages">
-              <span class="active">1</span>
-              <a href="#product-list">2</a>
-              <a href="#product-list">3</a>
-              <a href="#product-list">4</a>
-              <a href="#product-list">5</a>
-              <a href="#product-list">Next</a>
-            </nav>
+            <?php if ($totalPages > 1): ?>
+              <nav class="catalog-pagination" aria-label="Product pages">
+                <?php if ($currentPage > 1): ?>
+                  <a href="<?php echo htmlspecialchars(productListUrl($selectedCategoryId ?: null, $currentPage - 1), ENT_QUOTES, 'UTF-8'); ?>">Prev</a>
+                <?php endif; ?>
+                <?php for ($page = 1; $page <= $totalPages; $page++): ?>
+                  <?php if ($page === $currentPage): ?>
+                    <span class="active"><?php echo $page; ?></span>
+                  <?php else: ?>
+                    <a href="<?php echo htmlspecialchars(productListUrl($selectedCategoryId ?: null, $page), ENT_QUOTES, 'UTF-8'); ?>"><?php echo $page; ?></a>
+                  <?php endif; ?>
+                <?php endfor; ?>
+                <?php if ($currentPage < $totalPages): ?>
+                  <a href="<?php echo htmlspecialchars(productListUrl($selectedCategoryId ?: null, $currentPage + 1), ENT_QUOTES, 'UTF-8'); ?>">Next</a>
+                <?php endif; ?>
+              </nav>
+            <?php endif; ?>
           </div>
         </div>
       </div>
