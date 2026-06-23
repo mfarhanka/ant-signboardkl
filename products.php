@@ -833,7 +833,8 @@ $structuredData = [
             <li class="nav-item"><a class="nav-link" href="index.php#projects">Projects</a></li>
             <li class="nav-item"><a class="nav-link" href="index.php#work">About</a></li>
             <li class="nav-item"><a class="nav-link" href="index.php#process">Process</a></li>
-            <li class="nav-item ml-lg-3"><a class="btn btn-red px-4" href="index.php#contact"><i class="fas fa-phone-alt mr-2"></i>Get Quote</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.php">Contact</a></li>
+            <li class="nav-item ml-lg-3"><a class="btn btn-red px-4" href="contact.php"><i class="fas fa-phone-alt mr-2"></i>Get Quote</a></li>
           </ul>
         </div>
       </div>
@@ -960,7 +961,7 @@ $structuredData = [
               <p class="mb-3"><i class="fas fa-phone-alt mr-2 text-danger"></i><a href="tel:+60167013295">+60 16-701 3295</a></p>
               <p class="mb-3"><i class="fas fa-envelope mr-2 text-danger"></i><a href="mailto:antadv.rei@gmail.com">antadv.rei@gmail.com</a></p>
               <p class="mb-4"><i class="fas fa-map-marker-alt mr-2 text-danger"></i>16, Jalan Nilam 1/6, Taman Teknologi Tinggi Subang, 47500 Subang Jaya, Selangor, Malaysia.</p>
-              <a class="btn btn-red btn-block" href="mailto:antadv.rei@gmail.com"><i class="fas fa-paper-plane mr-2"></i>Email Your Brief</a>
+              <a class="btn btn-red btn-block" href="contact.php"><i class="fas fa-paper-plane mr-2"></i>Send Your Brief</a>
             </div>
           </div>
         </div>

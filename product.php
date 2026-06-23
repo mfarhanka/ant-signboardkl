@@ -291,7 +291,8 @@ $structuredData = $product ? [
             <li class="nav-item"><a class="nav-link" href="index.php#projects">Projects</a></li>
             <li class="nav-item"><a class="nav-link" href="index.php#work">About</a></li>
             <li class="nav-item"><a class="nav-link" href="index.php#process">Process</a></li>
-            <li class="nav-item ml-lg-3"><a class="btn btn-red px-4" href="index.php#contact"><i class="fas fa-phone-alt mr-2"></i>Get Quote</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.php">Contact</a></li>
+            <li class="nav-item ml-lg-3"><a class="btn btn-red px-4" href="contact.php"><i class="fas fa-phone-alt mr-2"></i>Get Quote</a></li>
           </ul>
         </div>
       </div>

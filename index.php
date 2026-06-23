@@ -960,7 +960,7 @@ $reviewSlides = array_chunk($googleReviews, 3);
   <body>
     <nav class="navbar navbar-expand-lg navbar-light sticky-top">
       <div class="container">
-        <a class="navbar-brand" href="#" aria-label="A&T Media Sdn. Bhd.">
+        <a class="navbar-brand" href="index.php" aria-label="A&T Media Sdn. Bhd.">
           <img src="assets/ant-signage-logo.png" alt="A&T Media Sdn. Bhd. logo">
           <span>Signboard<span class="brand-accent">KL</span></span>
         </a>
@@ -973,7 +973,8 @@ $reviewSlides = array_chunk($googleReviews, 3);
             <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
             <li class="nav-item"><a class="nav-link" href="#work">About</a></li>
             <li class="nav-item"><a class="nav-link" href="#process">Process</a></li>
-            <li class="nav-item ml-lg-3"><a class="btn btn-red px-4" href="#contact"><i class="fas fa-phone-alt mr-2"></i>Get Quote</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.php">Contact</a></li>
+            <li class="nav-item ml-lg-3"><a class="btn btn-red px-4" href="contact.php"><i class="fas fa-phone-alt mr-2"></i>Get Quote</a></li>
           </ul>
         </div>
       </div>
@@ -986,7 +987,7 @@ $reviewSlides = array_chunk($googleReviews, 3);
           <h1>Professional signage with stronger <span>impact.</span></h1>
           <p>A&T Media Sdn. Bhd. provides reliable one-stop support for consulting, design, production, printing, on-site installation, and evaluation of quality signage products.</p>
           <div class="hero-actions">
-            <a class="btn btn-red btn-lg px-4" href="#contact"><i class="fas fa-paper-plane mr-2"></i>Request a Quote</a>
+            <a class="btn btn-red btn-lg px-4" href="contact.php"><i class="fas fa-paper-plane mr-2"></i>Request a Quote</a>
             <a class="btn btn-outline-light btn-lg px-4" href="products.php"><i class="fas fa-th-large mr-2"></i>View Products</a>
           </div>
         </div>
