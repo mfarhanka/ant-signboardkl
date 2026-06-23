@@ -1297,7 +1297,7 @@ $reviewSlides = array_chunk($googleReviews, 3);
             </div>
           </div>
           <div class="col-lg-7">
-            <form class="contact-form-card" action="mailto:antadv.rei@gmail.com" method="post" enctype="text/plain">
+            <form class="contact-form-card" action="contact-submit.php" method="post">
               <h3>Tell us about your project</h3>
               <div class="form-row">
                 <div class="form-group col-md-6">
@@ -1328,11 +1328,11 @@ $reviewSlides = array_chunk($googleReviews, 3);
               </div>
               <div class="form-group">
                 <label for="contactLocation">Project location</label>
-                <input id="contactLocation" class="form-control" type="text" name="Project Location" placeholder="Kuala Lumpur, Klang Valley, Selangor, Seremban">
+                <input id="contactLocation" class="form-control" type="text" name="Project_Location" placeholder="Kuala Lumpur, Klang Valley, Selangor, Seremban">
               </div>
               <div class="form-group">
                 <label for="contactMessage">Project details</label>
-                <textarea id="contactMessage" class="form-control" name="Project Details" placeholder="Share size, quantity, timeline, artwork status, installation needs, or reference ideas." required></textarea>
+                <textarea id="contactMessage" class="form-control" name="Project_Details" placeholder="Share size, quantity, timeline, artwork status, installation needs, or reference ideas." required></textarea>
               </div>
               <button class="btn btn-red btn-lg btn-block" type="submit"><i class="fas fa-paper-plane mr-2"></i>Send Enquiry</button>
             </form>
