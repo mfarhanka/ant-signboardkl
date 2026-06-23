@@ -1,8 +1,8 @@
 <?php
 return [
   'smtp_host' => 'mail.signboardkl.com.my',
-  'smtp_port' => 587,
-  'smtp_secure' => 'tls',
+  'smtp_port' => 465,
+  'smtp_secure' => 'ssl',
   'smtp_username' => 'info@signboardkl.com.my',
   'smtp_password' => 'replace-with-mailbox-password',
   'from_email' => 'info@signboardkl.com.my',
