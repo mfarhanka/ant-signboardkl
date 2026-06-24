@@ -10,6 +10,7 @@ $catalog = catalog_load();
 $categoryMap = catalog_category_map($catalog);
 $productId = (string) ($_GET['id'] ?? '');
 $product = null;
+$categoryPath = [];
 
 foreach ($catalog['products'] as $item) {
   if (($item['id'] ?? '') === $productId) {
@@ -28,6 +29,7 @@ if (!$product) {
   $product['image'] = $product['image'] ?: CATALOG_DEFAULT_IMAGE;
   $product['description'] = trim((string) ($product['description'] ?? ''));
   $product['category'] = catalog_category_title($categoryMap, (string) ($product['category_id'] ?? ''));
+  $categoryPath = catalog_category_path($categoryMap, (string) ($product['category_id'] ?? ''));
   $siteTitle = ($product['seo_title'] ?: $product['title']) . ' | A&T Media Sdn. Bhd.';
   $siteDescription = $product['meta_description'] ?: ($product['description'] ?: 'Custom signage product by A&T Media Sdn. Bhd.');
   $canonicalUrl = rtrim($siteUrl, '/') . '/product.php?id=' . rawurlencode($product['id']);
@@ -310,6 +312,9 @@ $structuredData = $product ? [
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="index.php">Home</a></li>
             <li class="breadcrumb-item"><a href="products.php">Products</a></li>
+            <?php foreach ($categoryPath as $category): ?>
+              <li class="breadcrumb-item"><a href="products.php?cat=<?php echo rawurlencode($category['id']); ?>#product-list"><?php echo htmlspecialchars($category['title'], ENT_QUOTES, 'UTF-8'); ?></a></li>
+            <?php endforeach; ?>
             <li class="breadcrumb-item active" aria-current="page"><?php echo htmlspecialchars($product['title'] ?? 'Not Found', ENT_QUOTES, 'UTF-8'); ?></li>
           </ol>
         </nav>

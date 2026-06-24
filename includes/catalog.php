@@ -166,6 +166,23 @@ function catalog_category_title(array $categoryMap, string $categoryId): string
   return $categoryMap[$categoryId]['title'] ?? 'Uncategorized';
 }
 
+function catalog_category_path(array $categoryMap, string $categoryId): array
+{
+  $path = [];
+  $visited = [];
+  while ($categoryId !== '' && isset($categoryMap[$categoryId]) && !isset($visited[$categoryId])) {
+    $visited[$categoryId] = true;
+    $category = $categoryMap[$categoryId];
+    array_unshift($path, [
+      'id' => $category['id'],
+      'title' => $category['title'],
+    ]);
+    $categoryId = (string) ($category['parent_id'] ?? '');
+  }
+
+  return $path;
+}
+
 function catalog_category_options(array $catalog, ?string $excludeId = null, ?string $parentId = null, int $level = 0): array
 {
   $options = [];

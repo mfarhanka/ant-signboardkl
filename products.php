@@ -22,6 +22,7 @@ $categoryMap = catalog_category_map($catalog);
 $categoryTree = catalog_build_category_tree($catalog);
 $selectedCategoryId = (string) ($_GET['cat'] ?? '');
 $selectedCategory = $categoryMap[$selectedCategoryId] ?? null;
+$selectedCategoryPath = $selectedCategory ? catalog_category_path($categoryMap, $selectedCategoryId) : [];
 $currentPage = max(1, (int) ($_GET['page'] ?? 1));
 $perPage = 12;
 $products = [];
@@ -900,7 +901,19 @@ $structuredData = [
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Our Products</li>
+            <?php if ($selectedCategoryPath): ?>
+              <li class="breadcrumb-item"><a href="products.php">Our Products</a></li>
+              <?php foreach ($selectedCategoryPath as $index => $category): ?>
+                <?php $isLastCategory = $index === array_key_last($selectedCategoryPath); ?>
+                <?php if ($isLastCategory): ?>
+                  <li class="breadcrumb-item active" aria-current="page"><?php echo htmlspecialchars($category['title'], ENT_QUOTES, 'UTF-8'); ?></li>
+                <?php else: ?>
+                  <li class="breadcrumb-item"><a href="products.php?cat=<?php echo rawurlencode($category['id']); ?>#product-list"><?php echo htmlspecialchars($category['title'], ENT_QUOTES, 'UTF-8'); ?></a></li>
+                <?php endif; ?>
+              <?php endforeach; ?>
+            <?php else: ?>
+              <li class="breadcrumb-item active" aria-current="page">Our Products</li>
+            <?php endif; ?>
           </ol>
         </nav>
       </div>
