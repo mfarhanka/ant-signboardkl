@@ -590,6 +590,10 @@ $structuredData = [
         text-decoration: none;
       }
 
+      .category-level-0 > li > a {
+        text-transform: uppercase;
+      }
+
       .category-level a:hover {
         color: var(--brand-red);
       }
