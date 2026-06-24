@@ -960,7 +960,6 @@ $structuredData = [
                       <div class="product-card-body">
                         <small><?php echo htmlspecialchars($product['category'], ENT_QUOTES, 'UTF-8'); ?></small>
                         <h3><?php echo htmlspecialchars($product['title'], ENT_QUOTES, 'UTF-8'); ?></h3>
-                        <p><?php echo htmlspecialchars($product['summary'], ENT_QUOTES, 'UTF-8'); ?></p>
                       </div>
                     </a>
                     <div class="product-card-body pt-0">
