@@ -125,7 +125,7 @@ $status = 'error';
 $title = 'Unable to send enquiry';
 $message = 'Please WhatsApp or email A&T Media directly while the contact form is being configured.';
 
-if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+if (($_SERVER['REQUEST_METHOD'] ?? 'GET') !== 'POST') {
   header('Location: contact.php');
   exit;
 }
@@ -170,12 +170,7 @@ if ($name === '' || $phone === '' || $details === '') {
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title><?php echo htmlspecialchars($siteTitle, ENT_QUOTES, 'UTF-8'); ?></title>
-    <link rel="icon" type="image/png" href="<?php echo htmlspecialchars($logoImage, ENT_QUOTES, 'UTF-8'); ?>">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <?php require __DIR__ . '/includes/head.php'; ?>
     <style>
       :root {
         --brand-red: #d71920;

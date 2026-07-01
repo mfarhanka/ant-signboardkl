@@ -37,6 +37,7 @@ if (!$product) {
 }
 
 $siteKeywords = $product['seo_keywords'] ?? '';
+$metaRobots = $product ? 'index, follow' : 'noindex, follow';
 $whatsAppText = $product ? 'Hi, I am interested in ' . $product['title'] . '. ' . $canonicalUrl : 'Hi, I am interested to know more.';
 $whatsAppUrl = 'https://wa.me/' . $whatsAppPhone . '?text=' . rawurlencode($whatsAppText);
 $structuredData = $product ? [
@@ -56,30 +57,7 @@ $structuredData = $product ? [
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title><?php echo htmlspecialchars($siteTitle, ENT_QUOTES, 'UTF-8'); ?></title>
-    <meta name="description" content="<?php echo htmlspecialchars($siteDescription, ENT_QUOTES, 'UTF-8'); ?>">
-    <?php if ($siteKeywords !== ''): ?><meta name="keywords" content="<?php echo htmlspecialchars($siteKeywords, ENT_QUOTES, 'UTF-8'); ?>"><?php endif; ?>
-    <meta name="robots" content="<?php echo $product ? 'index, follow' : 'noindex, follow'; ?>">
-    <link rel="canonical" href="<?php echo htmlspecialchars($canonicalUrl, ENT_QUOTES, 'UTF-8'); ?>">
-    <link rel="icon" type="image/png" href="<?php echo htmlspecialchars($logoImage, ENT_QUOTES, 'UTF-8'); ?>">
-    <meta property="og:locale" content="en_MY">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="<?php echo htmlspecialchars($siteTitle, ENT_QUOTES, 'UTF-8'); ?>">
-    <meta property="og:description" content="<?php echo htmlspecialchars($siteDescription, ENT_QUOTES, 'UTF-8'); ?>">
-    <meta property="og:url" content="<?php echo htmlspecialchars($canonicalUrl, ENT_QUOTES, 'UTF-8'); ?>">
-    <meta property="og:site_name" content="<?php echo htmlspecialchars($siteName, ENT_QUOTES, 'UTF-8'); ?>">
-    <meta property="og:image" content="<?php echo htmlspecialchars($ogImage, ENT_QUOTES, 'UTF-8'); ?>">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="<?php echo htmlspecialchars($siteTitle, ENT_QUOTES, 'UTF-8'); ?>">
-    <meta name="twitter:description" content="<?php echo htmlspecialchars($siteDescription, ENT_QUOTES, 'UTF-8'); ?>">
-    <meta name="twitter:image" content="<?php echo htmlspecialchars($ogImage, ENT_QUOTES, 'UTF-8'); ?>">
-    <link rel="preconnect" href="https://stackpath.bootstrapcdn.com">
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <?php if ($structuredData): ?><script type="application/ld+json"><?php echo json_encode($structuredData, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE); ?></script><?php endif; ?>
+    <?php require __DIR__ . '/includes/head.php'; ?>
     <style>
       :root {
         --brand-red: #d71920;
@@ -277,28 +255,7 @@ $structuredData = $product ? [
     </style>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
-      <div class="container">
-        <a class="navbar-brand" href="index.php" aria-label="A&T Media Sdn. Bhd.">
-          <img src="assets/ant-signage-logo.png" alt="A&T Media Sdn. Bhd. logo">
-          <span>Signboard<span class="brand-accent">KL</span></span>
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="mainNav">
-          <ul class="navbar-nav ml-auto align-items-lg-center">
-            <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
-            <li class="nav-item"><a class="nav-link active" href="products.php">Products</a></li>
-            <li class="nav-item"><a class="nav-link" href="index.php#projects">Projects</a></li>
-            <li class="nav-item"><a class="nav-link" href="index.php#work">About</a></li>
-            <li class="nav-item"><a class="nav-link" href="index.php#process">Process</a></li>
-            <li class="nav-item"><a class="nav-link" href="contact.php">Contact</a></li>
-            <li class="nav-item ml-lg-3"><a class="btn btn-red px-4" href="contact.php"><i class="fas fa-phone-alt mr-2"></i>Get Quote</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+    <?php $activePage = 'products'; require __DIR__ . '/includes/nav.php'; ?>
 
     <header class="page-title">
       <div class="container">
@@ -354,14 +311,7 @@ $structuredData = $product ? [
       </div>
     </main>
 
-    <footer>
-      <div class="container">
-        <div class="footer-brand">A&amp;T Media Sdn. Bhd.</div>
-        <div class="footer-tagline">Trusted Signboard Supplier in Kuala Lumpur Since 2022</div>
-        <div class="footer-group">Part of ANT Group</div>
-        <div class="footer-copyright mt-3">Copyright &copy; 2026 A&amp;T Media Sdn. Bhd. 202501057902 (1659308-W) All rights reserved.</div>
-      </div>
-    </footer>
+    <?php require __DIR__ . '/includes/footer.php'; ?>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
