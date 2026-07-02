@@ -24,6 +24,11 @@ if (!$product) {
   $siteTitle = 'Produk Tidak Dijumpai | A&T Media Sdn. Bhd.';
   $siteDescription = 'Produk yang diminta tidak dapat dijumpai.';
   $canonicalUrl = rtrim($siteUrl, '/') . '/my/product.php';
+  $alternateLinks = [
+    'en-MY' => rtrim($siteUrl, '/') . '/product.php',
+    'ms-MY' => rtrim($siteUrl, '/') . '/my/product.php',
+    'x-default' => rtrim($siteUrl, '/') . '/product.php',
+  ];
   $ogImage = rtrim($siteUrl, '/') . '/assets/signboardkl-hero.png';
 } else {
   $product['image'] = $product['image'] ?: CATALOG_DEFAULT_IMAGE;
@@ -33,6 +38,11 @@ if (!$product) {
   $siteTitle = ($product['seo_title'] ?: $product['title']) . ' | A&T Media Sdn. Bhd.';
   $siteDescription = $product['meta_description'] ?: ($product['description'] ?: 'Produk signage tersuai oleh A&T Media Sdn. Bhd.');
   $canonicalUrl = rtrim($siteUrl, '/') . '/my/product.php?id=' . rawurlencode($product['id']);
+  $alternateLinks = [
+    'en-MY' => rtrim($siteUrl, '/') . '/product.php?id=' . rawurlencode($product['id']),
+    'ms-MY' => rtrim($siteUrl, '/') . '/my/product.php?id=' . rawurlencode($product['id']),
+    'x-default' => rtrim($siteUrl, '/') . '/product.php?id=' . rawurlencode($product['id']),
+  ];
   $ogImage = rtrim($siteUrl, '/') . '/' . ltrim($product['image'], '/');
 }
 

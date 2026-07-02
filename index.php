@@ -23,6 +23,11 @@ if ($requestPath === '/index.php' || $requestPath === '/index.html') {
 
 $baseUrl = rtrim($siteUrl, '/');
 $canonicalUrl = $baseUrl . ($requestPath === '/' ? '/' : $requestPath);
+$alternateLinks = [
+  'en-MY' => $baseUrl . '/',
+  'ms-MY' => $baseUrl . '/my/',
+  'x-default' => $baseUrl . '/',
+];
 $ogImage = $baseUrl . '/assets/signboardkl-hero.png';
 $ogImageAlt = 'A&T Media signage and signboard services';
 $logoImage = $baseUrl . '/assets/ant-signage-logo.png';

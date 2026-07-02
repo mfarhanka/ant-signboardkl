@@ -7,6 +7,11 @@ $siteDescription = 'Terokai produk A&T Media termasuk 3D box up lettering, signb
 $siteKeywords = 'produk signboard Kuala Lumpur, produk signboard KL, 3D box up lettering, fabric lightbox, standee signage, produk signage Klang Valley';
 $siteUrl = 'http://signboardkl.com.my';
 $canonicalUrl = rtrim($siteUrl, '/') . '/my/products.php';
+$alternateLinks = [
+  'en-MY' => rtrim($siteUrl, '/') . '/products.php',
+  'ms-MY' => rtrim($siteUrl, '/') . '/my/products.php',
+  'x-default' => rtrim($siteUrl, '/') . '/products.php',
+];
 $ogImage = rtrim($siteUrl, '/') . '/assets/signboardkl-hero.png';
 $ogImageAlt = 'A&T Media produk and signage solutions';
 $logoImage = rtrim($siteUrl, '/') . '/assets/ant-signage-logo.png';

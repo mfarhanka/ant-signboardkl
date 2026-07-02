@@ -8,6 +8,11 @@ $sitePhoneLink = '+60167013295';
 $siteEmail = 'antadv.rei@gmail.com';
 $siteUrl = 'http://signboardkl.com.my';
 $canonicalUrl = rtrim($siteUrl, '/') . '/my/contact.php';
+$alternateLinks = [
+  'en-MY' => rtrim($siteUrl, '/') . '/contact.php',
+  'ms-MY' => rtrim($siteUrl, '/') . '/my/contact.php',
+  'x-default' => rtrim($siteUrl, '/') . '/contact.php',
+];
 $ogImage = rtrim($siteUrl, '/') . '/assets/signboardkl-hero.png';
 $ogImageAlt = 'A&T Media signage and signboard services';
 $logoImage = rtrim($siteUrl, '/') . '/assets/ant-signage-logo.png';

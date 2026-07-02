@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
 Sitemap: http://signboardkl.com.my/sitemap.xml
+Sitemap: http://signboardkl.com.my/sitemap-products.php

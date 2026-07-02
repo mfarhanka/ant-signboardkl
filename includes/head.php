@@ -11,6 +11,11 @@ $ogType = $ogType ?? 'website';
 <?php if (!empty($siteName)): ?><meta name="author" content="<?php echo htmlspecialchars($siteName, ENT_QUOTES, 'UTF-8'); ?>"><?php endif; ?>
 <meta name="theme-color" content="#d71920">
 <?php if (!empty($canonicalUrl)): ?><link rel="canonical" href="<?php echo htmlspecialchars($canonicalUrl, ENT_QUOTES, 'UTF-8'); ?>"><?php endif; ?>
+<?php if (!empty($alternateLinks) && is_array($alternateLinks)): ?>
+<?php foreach ($alternateLinks as $alternateLang => $alternateUrl): ?>
+<link rel="alternate" hreflang="<?php echo htmlspecialchars((string) $alternateLang, ENT_QUOTES, 'UTF-8'); ?>" href="<?php echo htmlspecialchars((string) $alternateUrl, ENT_QUOTES, 'UTF-8'); ?>">
+<?php endforeach; ?>
+<?php endif; ?>
 <?php if (!empty($logoImage)): ?><link rel="icon" type="image/png" href="<?php echo htmlspecialchars($logoImage, ENT_QUOTES, 'UTF-8'); ?>"><?php endif; ?>
 <meta property="og:locale" content="en_MY">
 <meta property="og:type" content="<?php echo htmlspecialchars($ogType, ENT_QUOTES, 'UTF-8'); ?>">
