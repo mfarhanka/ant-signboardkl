@@ -6,6 +6,8 @@ require_once __DIR__ . '/includes/catalog.php';
 $siteUrl = 'http://signboardkl.com.my';
 $baseUrl = rtrim($siteUrl, '/');
 $catalog = catalog_load();
+$catalogModifiedAt = filemtime(__DIR__ . '/data/catalog.json');
+$lastModified = gmdate('Y-m-d', $catalogModifiedAt !== false ? $catalogModifiedAt : time());
 
 header('Content-Type: application/xml; charset=UTF-8');
 
@@ -28,7 +30,7 @@ echo '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
     <xhtml:link rel="alternate" hreflang="en-MY" href="<?php echo htmlspecialchars($englishUrl, ENT_XML1, 'UTF-8'); ?>" />
     <xhtml:link rel="alternate" hreflang="ms-MY" href="<?php echo htmlspecialchars($malayUrl, ENT_XML1, 'UTF-8'); ?>" />
     <xhtml:link rel="alternate" hreflang="x-default" href="<?php echo htmlspecialchars($englishUrl, ENT_XML1, 'UTF-8'); ?>" />
-    <lastmod>2026-07-02</lastmod>
+    <lastmod><?php echo $lastModified; ?></lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -37,7 +39,7 @@ echo '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
     <xhtml:link rel="alternate" hreflang="en-MY" href="<?php echo htmlspecialchars($englishUrl, ENT_XML1, 'UTF-8'); ?>" />
     <xhtml:link rel="alternate" hreflang="ms-MY" href="<?php echo htmlspecialchars($malayUrl, ENT_XML1, 'UTF-8'); ?>" />
     <xhtml:link rel="alternate" hreflang="x-default" href="<?php echo htmlspecialchars($englishUrl, ENT_XML1, 'UTF-8'); ?>" />
-    <lastmod>2026-07-02</lastmod>
+    <lastmod><?php echo $lastModified; ?></lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
