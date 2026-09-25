@@ -1,12 +1,13 @@
 <?php
 require_once __DIR__ . '/../includes/catalog.php';
+require_once __DIR__ . '/../includes/catalog-ms.php';
 
 $siteName = 'A&T Media Sdn. Bhd.';
 $siteUrl = 'http://signboardkl.com.my';
 $logoImage = rtrim($siteUrl, '/') . '/assets/ant-signage-logo.png';
 $whatsAppPhone = '60167013295';
 
-$catalog = catalog_load();
+$catalog = catalog_ms_localize(catalog_load());
 $categoryMap = catalog_category_map($catalog);
 $productId = (string) ($_GET['id'] ?? '');
 $product = null;

@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/../includes/catalog.php';
+require_once __DIR__ . '/../includes/catalog-ms.php';
 
 $siteName = 'A&T Media Sdn. Bhd.';
 $siteTitle = 'Produk | A&T Media Sdn. Bhd. Signboard, Signage & Printing KL';
@@ -23,7 +24,7 @@ function productSlug(string $value): string
   return catalog_slug($value);
 }
 
-$catalog = catalog_load();
+$catalog = catalog_ms_localize(catalog_load());
 $categoryMap = catalog_category_map($catalog);
 $categoryTree = catalog_build_category_tree($catalog);
 $selectedCategoryId = (string) ($_GET['cat'] ?? '');
